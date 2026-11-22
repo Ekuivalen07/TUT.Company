@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUT.Company — Engineering Tomorrow's Tech & Talent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tutBlue: '#1E45FB',
+                        tutLime: '#CDF22B',
+                        tutDark: '#0A0B0F',
+                        tutMuted: '#A3ACB9',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="bg-[#F7F8FA] text-slate-900 antialiased selection:bg-[#CDF22B] selection:text-[#0A0B0F] overflow-x-hidden">
+
+    <!-- Top Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Architectural Dashed Grid Background -->
+    <div class="tech-grid-lines hidden md:grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+    <header id="main-navbar" class="fixed top-0 inset-x-0 z-40 transition-all duration-300 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-2.5 group">
+                <div
+                    class="w-9 h-9 rounded-xl bg-[#0A0B0F] flex items-center justify-center shadow-sm group-hover:bg-[#1E45FB] transition-colors">
+                    <span
+                        class="w-3.5 h-3.5 rounded-sm bg-[#CDF22B] rotate-45 block transition-transform duration-300 group-hover:rotate-90"></span>
+                </div>
+                <span class="font-display font-bold text-lg tracking-tight text-slate-900">
+                    TUT<span class="text-[#1E45FB]">.Company</span>
+                </span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-500">
+                <a href="index.html" class="text-[#1E45FB] font-semibold flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#1E45FB]"></span> Home
+                </a>
+                <a href="about.html" class="hover:text-slate-900 transition-colors">About Us</a>
+                <a href="solutions.html" class="hover:text-slate-900 transition-colors">Solutions</a>
+                <a href="ecosystem.html" class="hover:text-slate-900 transition-colors">Ecosystem</a>
+                <a href="events.html" class="hover:text-slate-900 transition-colors">Events</a>
+            </nav>
+
+            <!-- Desktop CTA Actions -->
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="ecosystem.html"
+                    class="px-4 py-2 rounded-full border border-slate-300 text-xs font-semibold text-slate-800 hover:border-slate-900 transition-colors">
+                    TUT.EDU
+                </a>
+                <a href="contact.html"
+                    class="btn-pill px-5 py-2.5 rounded-full bg-[#1E45FB] text-white text-xs font-semibold flex items-center gap-2">
+                    <span>Contact Us</span>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 btn-arrow"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button id="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false"
+                class="lg:hidden p-2 rounded-xl border border-slate-200 bg-white text-slate-800">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 px-6 py-5 shadow-xl">
+            <div class="flex flex-col gap-4 text-sm font-semibold text-slate-700">
+                <a href="index.html" class="text-[#1E45FB]">Home</a>
+                <a href="about.html" class="hover:text-[#1E45FB]">About Us</a>
+                <a href="solutions.html" class="hover:text-[#1E45FB]">Solutions &amp; Core Tech</a>
+                <a href="ecosystem.html" class="hover:text-[#1E45FB]">Our Ecosystem</a>
+                <a href="events.html" class="hover:text-[#1E45FB]">Events &amp; News</a>
+                <a href="contact.html"
+                    class="mt-2 inline-flex justify-center items-center gap-2 px-5 py-3 rounded-full bg-[#1E45FB] text-white">
+                    Contact Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-28 sm:pt-32">
+
+        <!-- ================= HERO SECTION ================= -->
+        <section class="max-w-7xl mx-auto px-5 sm:px-8 pb-20">
+            <!-- Editorial Asymmetric Headline Row -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-10 sm:mb-12">
+                <!-- Left Intro + Pill Button -->
+                <div class="lg:col-span-3 order-2 lg:order-1" data-reveal="left">
+                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed mb-5 max-w-[230px]">
+                        Engineering breakthroughs in AI, software, web platforms, and robotics—while empowering the next
+                        wave of builders.
+                    </p>
+                    <a href="solutions.html"
+                        class="btn-pill inline-flex items-center gap-3 pl-5 pr-2 py-2 rounded-full bg-[#1E45FB] text-white text-xs font-semibold">
+                        <span>Explore Solutions</span>
+                        <span
+                            class="w-7 h-7 rounded-full bg-white text-[#1E45FB] flex items-center justify-center btn-arrow">
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Center Big Two-Tone Headline + Tilted Badge -->
+                <div class="lg:col-span-6 order-1 lg:order-2 lg:text-center relative" data-reveal>
+                    <h1
+                        class="font-display font-bold text-5xl sm:text-7xl lg:text-[5.2rem] leading-[0.95] tracking-tight text-[#0A0B0F]">
+                        Engineering
+                        <span class="block relative mt-1 text-[#A3ACB9]">
+                            <span class="tut-badge absolute -top-3 left-0 sm:left-8 lg:left-6 z-10 text-[11px]">
+                                <i data-lucide="sparkles" class="w-3 h-3"></i> Tech Ecosystem
+                            </span>
+                            Tomorrow
+                        </span>
+                    </h1>
+                </div>
+
+                <!-- Right Mini Spec Tagline -->
+                <div class="lg:col-span-3 order-3 lg:text-right" data-reveal="right">
+                    <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-1">Four Core Pillars</p>
+                    <p class="text-sm font-semibold text-slate-800">AI &bull; Code &bull; Apps &bull; Robotics</p>
+                </div>
+            </div>
+
+            <!-- Full-Width Rounded Hero Showcase Banner -->
+            <div class="relative rounded-[2rem] overflow-hidden bg-[#0A0B0F] h-[420px] sm:h-[520px] lg:h-[580px] shadow-2xl shadow-slate-900/10"
+                data-reveal="scale">
+                <img id="hero-slide-img"
+                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=80"
+                    alt="TUT.Company Engineering Lab" class="hero-slide-img w-full h-full object-cover opacity-90" />
+                <!-- Subtle Bottom Vignette -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/10 pointer-events-none">
+                </div>
+
+                <!-- Bottom Left Interactive Slider Controls -->
+                <div class="absolute bottom-5 left-5 sm:bottom-7 sm:left-7 flex items-center gap-2 z-10">
+                    <button id="hero-prev" aria-label="Previous slide"
+                        class="glass-pill w-10 h-10 rounded-full flex items-center justify-center text-slate-900 hover:bg-[#CDF22B] transition-colors">
+                        <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                    </button>
+                    <div
+                        class="glass-pill px-4 h-10 rounded-full flex items-center gap-2.5 text-xs font-semibold text-slate-900">
+                        <span id="hero-slide-tag">AI &amp; Robotics Division</span>
+                        <span class="text-slate-300">|</span>
+                        <span id="hero-slide-index" class="font-display text-[#1E45FB]">01 / 03</span>
+                    </div>
+                    <button id="hero-next" aria-label="Next slide"
+                        class="glass-pill w-10 h-10 rounded-full flex items-center justify-center text-slate-900 hover:bg-[#CDF22B] transition-colors">
+                        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <!-- Bottom Right Floating Info Card (Reference Style) -->
+                <div
+                    class="hidden sm:block absolute bottom-5 right-5 sm:bottom-7 sm:right-7 w-72 md:w-80 bg-white rounded-2xl p-5 shadow-2xl z-10">
+                    <p id="hero-slide-title"
+                        class="font-display font-semibold text-base text-slate-900 leading-snug mb-5">
+                        Autonomous AI &amp; smart robotics built for real-world scale
+                    </p>
+                    <a id="hero-slide-cta" href="solutions.html"
+                        class="group flex items-center justify-between pt-3.5 border-t border-slate-100 text-xs font-semibold text-slate-700 hover:text-[#1E45FB] transition-colors">
+                        <span>Explore Core Solutions</span>
+                        <span
+                            class="w-8 h-8 rounded-lg bg-[#1E45FB] text-white flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ABOUT & IMPACT METRICS ================= -->
+        <section class="max-w-7xl mx-auto px-5 sm:px-8 pt-10">
+            <div class="mb-12" data-reveal>
+                <span class="tut-badge mb-4">About Us</span>
+                <h2
+                    class="font-display font-bold text-3xl sm:text-5xl tracking-tight text-[#0A0B0F] leading-tight max-w-3xl">
+                    One unified ecosystem powering
+                    <span class="text-[#A3ACB9]">innovation, education &amp; tech culture</span>
+                </h2>
+            </div>
+
+            <!-- 4 Mini Ecosystem Thumbnails + Narrative -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-14">
+                <div class="lg:col-span-6 flex items-center gap-3 sm:gap-4" data-reveal="left">
+                    <div
+                        class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden shadow-md border-2 border-white hover:-translate-y-1 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=300&q=80"
+                            alt="AI Engineering" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                        class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden shadow-md border-2 border-white hover:-translate-y-1 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=300&q=80"
+                            alt="TUT.EDU Online" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                        class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden shadow-md border-2 border-white hover:-translate-y-1 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=300&q=80"
+                            alt="IoT Robotics Lab" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                        class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden shadow-md border-2 border-white hover:-translate-y-1 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=300&q=80"
+                            alt="Tech Expo" class="w-full h-full object-cover" />
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 lg:pl-8" data-reveal="right">
+                    <p class="text-sm sm:text-base text-slate-500 leading-relaxed">
+                        <strong class="text-slate-900">TUT.Company</strong> is a technology parent company building
+                        production-grade AI, Software, Web/App, and IoT Robotics. Every breakthrough fuels our education
+                        units (<strong class="text-slate-800">TUT.EDU</strong> &amp; <strong
+                            class="text-slate-800">TUT.Academy</strong>) and comes alive on stage through <strong
+                            class="text-slate-800">TUT.Entertainment</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Overlapping Portrait + Giant Animated Counters -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                <!-- Left Image that Overlaps Into Dark Section Below -->
+                <div class="lg:col-span-5 relative z-20 lg:-mb-28" data-reveal="scale">
+                    <div
+                        class="rounded-[1.75rem] overflow-hidden shadow-2xl shadow-slate-900/15 aspect-[4/4.6] bg-slate-200 border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80"
+                            alt="TUT.Company Hardware & Software Engineer"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                    </div>
+                </div>
+
+                <!-- Right Copy + Impact Counters -->
+                <div class="lg:col-span-7 lg:pl-8 pb-12 lg:pb-16" data-reveal="right">
+                    <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-10 max-w-xl">
+                        From zero-to-one enterprise systems to inclusive IT education for beginners through seasoned
+                        professionals, our mission is simple: <span class="text-slate-900 font-semibold">build
+                            meaningful technology, teach the craft openly, and celebrate innovation together.</span>
+                    </p>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-200/80">
+                        <div>
+                            <div class="font-display font-bold text-4xl sm:text-5xl text-[#0A0B0F] tracking-tight">
+                                <span data-counter="120" data-suffix="">0</span><span class="text-[#1E45FB]">+</span>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1.5 font-medium">AI, Web &amp; IoT Projects Shipped</p>
+                        </div>
+                        <div>
+                            <div class="font-display font-bold text-4xl sm:text-5xl text-[#0A0B0F] tracking-tight">
+                                <span data-counter="50" data-suffix="K">0</span><span class="text-[#1E45FB]">+</span>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1.5 font-medium">Online &amp; Offline Learners</p>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1">
+                            <div class="font-display font-bold text-4xl sm:text-5xl text-[#0A0B0F] tracking-tight">
+                                <span data-counter="98" data-suffix="">0</span><span class="text-[#1E45FB]">%</span>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1.5 font-medium">Partner &amp; Alumni Satisfaction</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="about.html"
+                            class="inline-flex items-center gap-2 text-sm font-semibold text-[#1E45FB] hover:gap-3 transition-all">
+                            Read the TUT.Company Story <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= DARK CORE TECHNOLOGY SECTION (Reference Bento Style) ================= -->
+        <section class="max-w-7xl mx-auto px-3 sm:px-8 relative z-10">
+            <div
+                class="bg-[#0A0B0F] text-white rounded-[2.25rem] px-6 sm:px-12 lg:px-16 pt-16 lg:pt-36 pb-16 lg:pb-20 shadow-2xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    <!-- Left Heading Column -->
+                    <div class="lg:col-span-5" data-reveal="left">
+                        <span class="tut-badge mb-5">Core Technology</span>
+                        <h2
+                            class="font-display font-bold text-3xl sm:text-4xl lg:text-[2.65rem] leading-[1.1] tracking-tight mb-5">
+                            Comprehensive<br />
+                            <span class="text-slate-400">Tech Development</span>
+                        </h2>
+                        <p class="text-sm text-slate-400 leading-relaxed max-w-sm mb-8">
+                            Click any engineering division to inspect capabilities, or explore our full project archive.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <a href="solutions.html"
+                                class="btn-pill inline-flex items-center gap-2.5 px-5 py-3 rounded-full bg-white text-[#0A0B0F] text-xs font-bold hover:bg-[#CDF22B]">
+                                <span>View All Solutions</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 btn-arrow"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right 2x2 Minimal Tech Grid -->
+                    <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+                        <!-- Card 1: AI -->
+                        <button onclick="openTechModal('tech', 'ai')"
+                            class="text-left group p-6 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:border-[#CDF22B]/60 hover:bg-white/[0.06] transition-all duration-300"
+                            data-reveal data-delay="50">
+                            <div
+                                class="w-11 h-11 rounded-xl bg-white/10 text-[#CDF22B] flex items-center justify-center mb-5 group-hover:bg-[#CDF22B] group-hover:text-[#0A0B0F] transition-colors">
+                                <i data-lucide="cpu" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-display font-semibold text-lg mb-2 flex items-center justify-between">
+                                Artificial Intelligence
+                                <i data-lucide="arrow-up-right"
+                                    class="w-4 h-4 text-slate-500 group-hover:text-[#CDF22B] transition-colors"></i>
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                                Autonomous LLM agents, computer vision quality pipelines, and predictive machine
+                                learning models.
+                            </p>
+                        </button>
+
+                        <!-- Card 2: Software & Programming -->
+                        <button onclick="openTechModal('tech', 'programming')"
+                            class="text-left group p-6 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:border-[#CDF22B]/60 hover:bg-white/[0.06] transition-all duration-300"
+                            data-reveal data-delay="120">
+                            <div
+                                class="w-11 h-11 rounded-xl bg-white/10 text-[#CDF22B] flex items-center justify-center mb-5 group-hover:bg-[#CDF22B] group-hover:text-[#0A0B0F] transition-colors">
+                                <i data-lucide="terminal" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-display font-semibold text-lg mb-2 flex items-center justify-between">
+                                Software &amp; Programming
+                                <i data-lucide="arrow-up-right"
+                                    class="w-4 h-4 text-slate-500 group-hover:text-[#CDF22B] transition-colors"></i>
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                                Scalable backend architecture, high-throughput APIs, and enterprise cloud
+                                infrastructure.
+                            </p>
+                        </button>
+
+                        <!-- Card 3: App & Web -->
+                        <button onclick="openTechModal('tech', 'appweb')"
+                            class="text-left group p-6 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:border-[#CDF22B]/60 hover:bg-white/[0.06] transition-all duration-300"
+                            data-reveal data-delay="190">
+                            <div
+                                class="w-11 h-11 rounded-xl bg-white/10 text-[#CDF22B] flex items-center justify-center mb-5 group-hover:bg-[#CDF22B] group-hover:text-[#0A0B0F] transition-colors">
+                                <i data-lucide="layers" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-display font-semibold text-lg mb-2 flex items-center justify-between">
+                                App &amp; Web Platforms
+                                <i data-lucide="arrow-up-right"
+                                    class="w-4 h-4 text-slate-500 group-hover:text-[#CDF22B] transition-colors"></i>
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                                High-craft web applications and cross-platform mobile experiences engineered for speed.
+                            </p>
+                        </button>
+
+                        <!-- Card 4: IoT & Robotics -->
+                        <button onclick="openTechModal('tech', 'iot')"
+                            class="text-left group p-6 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:border-[#CDF22B]/60 hover:bg-white/[0.06] transition-all duration-300"
+                            data-reveal data-delay="260">
+                            <div
+                                class="w-11 h-11 rounded-xl bg-white/10 text-[#CDF22B] flex items-center justify-center mb-5 group-hover:bg-[#CDF22B] group-hover:text-[#0A0B0F] transition-colors">
+                                <i data-lucide="bot" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-display font-semibold text-lg mb-2 flex items-center justify-between">
+                                IoT &amp; Robotics
+                                <i data-lucide="arrow-up-right"
+                                    class="w-4 h-4 text-slate-500 group-hover:text-[#CDF22B] transition-colors"></i>
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                                Smart connected sensors, embedded microcontrollers, and autonomous robotic prototypes.
+                            </p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= OUR ECOSYSTEM (Reference Asymmetric 3-Card Layout) ================= -->
+        <section class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-28">
+            <!-- Section Header -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end mb-12">
+                <div class="lg:col-span-7" data-reveal="left">
+                    <h2
+                        class="font-display font-bold text-5xl sm:text-6xl lg:text-7xl leading-[0.95] tracking-tight text-[#0A0B0F]">
+                        Our
+                        <span class="block text-[#A3ACB9] relative mt-1">
+                            Ecosystem
+                            <span class="tut-badge ml-2 align-middle text-[11px]">3 Business Units</span>
+                        </span>
+                    </h2>
+                </div>
+                <div class="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col items-start lg:items-end justify-between gap-4"
+                    data-reveal="right">
+                    <p class="text-sm text-slate-500 max-w-xs lg:text-right leading-relaxed">
+                        Three specialized units working in harmony to educate IT talent and spotlight real engineering
+                        breakthroughs.
+                    </p>
+                    <a href="ecosystem.html"
+                        class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#1E45FB] hover:gap-3 transition-all">
+                        Explore Full Ecosystem <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Asymmetric 3-Card Grid (Wide TUT.EDU + Portrait TUT.Academy + Portrait TUT.Entertainment) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+                <!-- Card 1: TUT.EDU (Wide 6 cols) -->
+                <div onclick="openTechModal('ecosystem', 'edu')"
+                    class="lg:col-span-6 card-zoom cursor-pointer group relative rounded-[1.75rem] overflow-hidden h-[360px] sm:h-[420px] bg-slate-900 shadow-lg"
+                    data-reveal>
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+                        alt="TUT.EDU Online Learning" class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/15 to-transparent"></div>
+                    <span
+                        class="absolute top-5 left-5 px-3.5 py-1.5 rounded-full bg-[#1E45FB] text-white text-[11px] font-bold tracking-wide">
+                        ONLINE CLASSES • BEGINNER TO PRO
+                    </span>
+                    <!-- Floating Bottom White Label Box -->
+                    <div class="absolute bottom-5 inset-x-5 flex items-center justify-between gap-3">
+                        <div class="bg-white rounded-2xl px-5 py-3.5 shadow-lg flex-1">
+                            <h3 class="font-display font-bold text-lg text-slate-900">TUT.EDU</h3>
+                            <p class="text-xs text-slate-500">Flexible online IT courses, AI mentor &amp; certification
+                            </p>
+                        </div>
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-white text-[#0A0B0F] flex items-center justify-center shadow-lg group-hover:bg-[#CDF22B] transition-colors shrink-0">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: TUT.Academy (3 cols) -->
+                <div onclick="openTechModal('ecosystem', 'academy')"
+                    class="lg:col-span-3 card-zoom cursor-pointer group relative rounded-[1.75rem] overflow-hidden h-[360px] sm:h-[420px] bg-slate-900 shadow-lg"
+                    data-reveal data-delay="100">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80"
+                        alt="TUT.Academy Offline Campus" class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <span
+                        class="absolute top-5 left-5 px-3 py-1.5 rounded-full bg-[#CDF22B] text-[#0A0B0F] text-[11px] font-bold">
+                        OFFLINE LABS
+                    </span>
+                    <div
+                        class="absolute bottom-5 inset-x-5 bg-white rounded-2xl p-4 shadow-lg group-hover:-translate-y-1 transition-transform">
+                        <div class="flex items-center justify-between mb-1">
+                            <h3 class="font-display font-bold text-base text-slate-900">TUT.Academy</h3>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#1E45FB]"></i>
+                        </div>
+                        <p class="text-xs text-slate-500 leading-snug">In-person IT bootcamps &amp; hands-on robotics
+                            labs.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: TUT.Entertainment (3 cols) -->
+                <div onclick="openTechModal('ecosystem', 'entertainment')"
+                    class="lg:col-span-3 card-zoom cursor-pointer group relative rounded-[1.75rem] overflow-hidden h-[360px] sm:h-[420px] bg-slate-900 shadow-lg"
+                    data-reveal data-delay="180">
+                    <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=900&q=80"
+                        alt="TUT.Entertainment Tech Expos" class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <span
+                        class="absolute top-5 left-5 px-3 py-1.5 rounded-full bg-white text-[#0A0B0F] text-[11px] font-bold">
+                        EVENTS &amp; EXPO
+                    </span>
+                    <div
+                        class="absolute bottom-5 inset-x-5 bg-white rounded-2xl p-4 shadow-lg group-hover:-translate-y-1 transition-transform">
+                        <div class="flex items-center justify-between mb-1">
+                            <h3 class="font-display font-bold text-base text-slate-900">TUT.Entertainment</h3>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#1E45FB]"></i>
+                        </div>
+                        <p class="text-xs text-slate-500 leading-snug">IT expos, hackathons &amp; product showcases.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= UPCOMING FLAGSHIP EVENT STRIP ================= -->
+        <section class="max-w-7xl mx-auto px-5 sm:px-8 pb-20">
+            <div class="rounded-[1.75rem] bg-white border border-slate-200/80 p-6 sm:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 shadow-sm"
+                data-reveal>
+                <div class="flex items-start sm:items-center gap-5">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-[#1E45FB]/10 text-[#1E45FB] flex items-center justify-center shrink-0">
+                        <i data-lucide="calendar-sparkles" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span
+                                class="text-[11px] font-bold uppercase tracking-wider text-[#1E45FB]">TUT.Entertainment
+                                Highlight</span>
+                            <span class="text-slate-300">&bull;</span>
+                            <span class="text-xs font-medium text-slate-500">Dec 14–16, 2026</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl sm:text-2xl text-slate-900">TUT Tech Expo 2026: Future
+                            Systems Live</h3>
+                        <p class="text-sm text-slate-500 mt-0.5">Live showcases of TUT.Company AI &amp; Robotics
+                            prototypes alongside national coding competitions.</p>
+                    </div>
+                </div>
+                <a href="events.html"
+                    class="btn-pill shrink-0 inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#0A0B0F] text-white text-xs font-semibold hover:bg-[#1E45FB]">
+                    <span>See Event Schedule</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 btn-arrow"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- ================= FLOATING DIAGONAL CTA SECTION (Reference Style) ================= -->
+        <section class="max-w-7xl mx-auto px-5 sm:px-8 py-20 sm:py-28 relative">
+            <div class="relative min-h-[380px] sm:min-h-[440px] flex flex-col items-center justify-center text-center">
+                <!-- Floating Top-Right Image -->
+                <div data-parallax="14"
+                    class="hidden md:block absolute top-0 right-4 lg:right-12 w-56 h-36 rounded-2xl overflow-hidden shadow-xl border-4 border-white animate-float-slow">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80"
+                        alt="Team Collaboration" class="w-full h-full object-cover" />
+                </div>
+
+                <!-- Floating Bottom-Left Image -->
+                <div data-parallax="-12"
+                    class="hidden md:block absolute bottom-0 left-4 lg:left-12 w-56 h-36 rounded-2xl overflow-hidden shadow-xl border-4 border-white animate-float-reverse">
+                    <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=600&q=80"
+                        alt="Tech Innovation" class="w-full h-full object-cover" />
+                </div>
+
+                <!-- Center Headline & Button -->
+                <div class="relative z-10 max-w-xl mx-auto" data-reveal>
+                    <span class="tut-badge mb-5">Let's Collaborate</span>
+                    <h2
+                        class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-[#0A0B0F] leading-[1.05] mb-6">
+                        Ready To Start<br />Your Next Tech Journey?
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-500 mb-8 max-w-md mx-auto">
+                        Partner with TUT.Company for custom AI &amp; software development, enroll in TUT.EDU &amp;
+                        TUT.Academy, or sponsor our next expo.
+                    </p>
+                    <a href="contact.html"
+                        class="btn-pill inline-flex items-center gap-3 pl-6 pr-2.5 py-2.5 rounded-full bg-[#1E45FB] text-white text-sm font-semibold">
+                        <span>Start a Conversation</span>
+                        <span
+                            class="w-8 h-8 rounded-full bg-white text-[#1E45FB] flex items-center justify-center btn-arrow">
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER WITH GIANT WATERMARK ================= -->
+    <footer class="relative z-10 bg-white border-t border-slate-200/80 pt-16 sm:pt-20 pb-8 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-14">
+                <!-- Left Headline & Nav -->
+                <div class="lg:col-span-6">
+                    <h3 class="font-display font-bold text-2xl sm:text-3xl text-slate-900 leading-snug mb-6">
+                        Building Tomorrow's<br />Tech &amp; Talent Ecosystem
+                    </h3>
+                    <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs font-semibold text-slate-500">
+                        <a href="index.html" class="text-[#1E45FB]">Home</a>
+                        <a href="about.html" class="hover:text-slate-900 transition-colors">About Us</a>
+                        <a href="solutions.html" class="hover:text-slate-900 transition-colors">Solutions</a>
+                        <a href="ecosystem.html" class="hover:text-slate-900 transition-colors">Ecosystem</a>
+                        <a href="events.html" class="hover:text-slate-900 transition-colors">Events</a>
+                        <a href="contact.html" class="hover:text-slate-900 transition-colors">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Right Newsletter -->
+                <div class="lg:col-span-6 lg:flex lg:justify-end">
+                    <div class="w-full max-w-sm">
+                        <p class="font-display font-semibold text-sm text-slate-900 mb-3">Subscribe to our tech dispatch
+                        </p>
+                        <form class="newsletter-form flex items-center gap-2">
+                            <input type="email" required placeholder="Enter your email address"
+                                class="flex-1 bg-[#F4F6F9] border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 focus:outline-none focus:border-[#1E45FB]" />
+                            <button type="submit" aria-label="Subscribe"
+                                class="w-11 h-11 rounded-xl bg-[#1E45FB] text-white flex items-center justify-center hover:bg-[#1432C8] transition-colors shrink-0">
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Massive Watermark (Reference Signature Element) -->
+            <div class="footer-watermark font-display font-bold text-center py-4 tracking-tighter">
+                [TUT.COMPANY]
+            </div>
+
+            <!-- Bottom Bar -->
+            <div
+                class="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+                <div class="flex items-center gap-4 text-slate-500">
+                    <a href="#" aria-label="GitHub" class="hover:text-[#1E45FB] transition-colors"><i
+                            data-lucide="github" class="w-4 h-4"></i></a>
+                    <a href="#" aria-label="LinkedIn" class="hover:text-[#1E45FB] transition-colors"><i
+                            data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    <a href="#" aria-label="Instagram" class="hover:text-[#1E45FB] transition-colors"><i
+                            data-lucide="instagram" class="w-4 h-4"></i></a>
+                    <a href="#" aria-label="YouTube" class="hover:text-[#1E45FB] transition-colors"><i
+                            data-lucide="youtube" class="w-4 h-4"></i></a>
+                </div>
+                <p>&copy; 2026 TUT.Company. All rights reserved.</p>
+                <div class="flex items-center gap-5">
+                    <a href="ecosystem.html#edu" class="hover:text-slate-900">TUT.EDU</a>
+                    <a href="ecosystem.html#academy" class="hover:text-slate-900">TUT.Academy</a>
+                    <a href="ecosystem.html#entertainment" class="hover:text-slate-900">TUT.Entertainment</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= QUICK DETAIL MODAL ================= -->
+    <div id="quick-modal"
+        class="modal-overlay fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-box bg-white rounded-3xl max-w-lg w-full p-7 shadow-2xl relative">
+            <button id="modal-close" aria-label="Close modal"
+                class="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-700 transition-colors">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+            <span id="modal-badge"
+                class="inline-block px-3 py-1 rounded-full bg-[#CDF22B] text-[#0A0B0F] text-[11px] font-bold mb-3"></span>
+            <h3 id="modal-title" class="font-display font-bold text-2xl text-slate-900 mb-3"></h3>
+            <p id="modal-desc" class="text-sm text-slate-600 leading-relaxed mb-5"></p>
+            <ul id="modal-list" class="space-y-2.5 mb-7 bg-[#F7F8FA] p-4 rounded-2xl"></ul>
+            <a id="modal-link" href="#"
+                class="btn-pill w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-[#1E45FB] text-white text-xs font-semibold">
+                Explore More
+            </a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

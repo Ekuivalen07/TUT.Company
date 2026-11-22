@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us — TUT.Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { tutBlue: '#1E45FB', tutLime: '#CDF22B', tutDark: '#0A0B0F', tutMuted: '#A3ACB9' }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="bg-[#F7F8FA] text-slate-900 antialiased selection:bg-[#CDF22B] selection:text-[#0A0B0F] overflow-x-hidden">
+
+    <div id="scroll-progress"></div>
+    <div class="tech-grid-lines hidden md:grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+    <header id="main-navbar" class="fixed top-0 inset-x-0 z-40 transition-all duration-300 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2.5 group">
+                <div
+                    class="w-9 h-9 rounded-xl bg-[#0A0B0F] flex items-center justify-center shadow-sm group-hover:bg-[#1E45FB] transition-colors">
+                    <span
+                        class="w-3.5 h-3.5 rounded-sm bg-[#CDF22B] rotate-45 block transition-transform duration-300 group-hover:rotate-90"></span>
+                </div>
+                <span class="font-display font-bold text-lg tracking-tight text-slate-900">TUT<span
+                        class="text-[#1E45FB]">.Company</span></span>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-500">
+                <a href="index.html" class="hover:text-slate-900 transition-colors">Home</a>
+                <a href="about.html" class="text-[#1E45FB] font-semibold flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#1E45FB]"></span> About Us
+                </a>
+                <a href="solutions.html" class="hover:text-slate-900 transition-colors">Solutions</a>
+                <a href="ecosystem.html" class="hover:text-slate-900 transition-colors">Ecosystem</a>
+                <a href="events.html" class="hover:text-slate-900 transition-colors">Events</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="ecosystem.html#edu"
+                    class="px-4 py-2 rounded-full border border-slate-300 text-xs font-semibold text-slate-800 hover:border-slate-900 transition-colors">TUT.EDU</a>
+                <a href="contact.html"
+                    class="btn-pill px-5 py-2.5 rounded-full bg-[#1E45FB] text-white text-xs font-semibold flex items-center gap-2">
+                    <span>Contact Us</span>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 btn-arrow"></i>
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false"
+                class="lg:hidden p-2 rounded-xl border border-slate-200 bg-white text-slate-800">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 px-6 py-5 shadow-xl">
+            <div class="flex flex-col gap-4 text-sm font-semibold text-slate-700">
+                <a href="index.html" class="hover:text-[#1E45FB]">Home</a>
+                <a href="about.html" class="text-[#1E45FB]">About Us</a>
+                <a href="solutions.html" class="hover:text-[#1E45FB]">Solutions &amp; Core Tech</a>
+                <a href="ecosystem.html" class="hover:text-[#1E45FB]">Our Ecosystem</a>
+                <a href="events.html" class="hover:text-[#1E45FB]">Events &amp; News</a>
+                <a href="contact.html"
+                    class="mt-2 inline-flex justify-center items-center gap-2 px-5 py-3 rounded-full bg-[#1E45FB] text-white">
+                    Contact Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-32 sm:pt-36">
+
+        <!-- ================= PAGE HERO ================= -->
+        <section class="max-w-7xl mx-auto px-5 sm:px-8 pb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-12">
+                <div class="lg:col-span-8" data-reveal="left">
+                    <span class="tut-badge mb-5">Who We Are</span>
+                    <h1
+                        class="font-display font-bold text-5xl sm:text-6xl lg:text-7xl leading-[0.98] tracking-tight text-[#0A0B0F]">
+                        Innovate. Educate.
+                        <span class="block text-[#A3ACB9] mt-1">Celebrate Tech.</span>
+                    </h1>
+                </div>
+                <div class="lg:col-span-4" data-reveal="right">
+                    <p class="text-sm sm:text-base text-slate-500 leading-relaxed">
+                        TUT.Company bridges real-world IT engineering with accessible education and vibrant community
+                        stages—creating a self-sustaining cycle of technological progress.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Wide Editorial Banner -->
+            <div class="relative rounded-[2rem] overflow-hidden h-[320px] sm:h-[440px] shadow-xl bg-[#0A0B0F]"
+                data-reveal="scale">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80"
+                    alt="TUT.Company Engineering and Education Team" class="w-full h-full object-cover opacity-90" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-6 left-6 right-6 flex flex-wrap items-center justify-between gap-4">
+                    <div class="glass-pill px-5 py-3 rounded-2xl">
+                        <p class="text-[11px] font-bold uppercase tracking-wider text-[#1E45FB]">Parent Company</p>
+                        <p class="font-display font-bold text-sm sm:text-base text-slate-900">PT Tech Up Teknologi
+                            Indonesia</p>
+                    </div>
+                    <div class="glass-pill px-5 py-3 rounded-2xl flex items-center gap-6">
+                        <div>
+                            <span class="font-display font-bold text-lg text-slate-900" data-counter="4"
+                                data-suffix="">0</span>
+                            <span class="text-xs text-slate-500 ml-1">Core Divisions</span>
+                        </div>
+                        <span class="w-px h-5 bg-slate-300"></span>
+                        <div>
+                            <span class="font-display font-bold text-lg text-slate-900" data-counter="3"
+                                data-suffix="">0</span>
+                            <span class="text-xs text-slate-500 ml-1">Ecosystem Units</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= VISION & MISSION ================= -->
+        <section class="max-w-7xl mx-auto px-5 sm:px-8 py-14">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-[1.75rem] p-8 sm:p-10 border border-slate-200/80 shadow-sm hover:shadow-lg transition-shadow"
+                    data-reveal="left">
+                    <div
+                        class="w-12 h-12 rounded-2xl bg-[#1E45FB]/10 text-[#1E45FB] flex items-center justify-center mb-6">
+                        <i data-lucide="compass" class="w-6 h-6"></i>
+                    </div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-[#1E45FB] mb-2">Our Vision</p>
+                    <h2 class="font-display font-bold text-2xl sm:text-3xl text-slate-900 mb-4">
+                        A connected tech ecosystem where builders never stop growing.
+                    </h2>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        We envision an industry where cutting-edge AI, software, web platforms, and robotics are not
+                        locked behind closed doors—but openly taught, practiced, and celebrated by learners from their
+                        very first line of code to senior engineering leadership.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-[1.75rem] p-8 sm:p-10 border border-slate-200/80 shadow-sm hover:shadow-lg transition-shadow"
+                    data-reveal="right">
+                    <div
+                        class="w-12 h-12 rounded-2xl bg-[#CDF22B] text-[#0A0B0F] flex items-center justify-center mb-6">
+                        <i data-lucide="zap" class="w-6 h-6"></i>
+                    </div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">Our Mission</p>
+                    <ul class="space-y-4 text-sm text-slate-600">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#1E45FB] shrink-0 mt-0.5"></i>
+                            <span><strong class="text-slate-900">Build Real Systems:</strong> Deliver reliable AI,
+                                software, web/app, and IoT robotics products for partners and communities.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#1E45FB] shrink-0 mt-0.5"></i>
+                            <span><strong class="text-slate-900">Educate Without Barriers:</strong> Provide hybrid IT
+                                pathways via TUT.EDU (online) and TUT.Academy (offline) for beginners to pros.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#1E45FB] shrink-0 mt-0.5"></i>
+                            <span><strong class="text-slate-900">Elevate Tech Culture:</strong> Stage national expos,
+                                hackathons, and robotics arenas through TUT.Entertainment.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= THE TUT FLYWHEEL (DARK BENTO) ================= -->
+        <section class="max-w-7xl mx-auto px-3 sm:px-8 py-12">
+            <div class="bg-[#0A0B0F] text-white rounded-[2.25rem] px-6 sm:px-12 lg:px-16 py-16 sm:py-20 shadow-2xl">
+                <div class="max-w-2xl mb-14" data-reveal>
+                    <span class="tut-badge mb-5">Ecosystem Synergy</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-5xl tracking-tight leading-tight">
+                        How the <span class="text-[#CDF22B]">TUT Flywheel</span> drives continuous innovation
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Step 1 -->
+                    <div class="p-7 rounded-3xl bg-white/[0.04] border border-white/10 hover:border-[#CDF22B]/60 transition-all group"
+                        data-reveal data-delay="60">
+                        <div class="flex items-center justify-between mb-6">
+                            <span
+                                class="font-display font-bold text-4xl text-white/20 group-hover:text-[#CDF22B] transition-colors">01</span>
+                            <span class="px-3 py-1 rounded-full bg-[#1E45FB] text-[11px] font-bold">TUT.Company</span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl mb-3">Build</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Our engineering divisions research and ship production solutions across Artificial
+                            Intelligence, Programming, App/Web platforms, and IoT Robotics.
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="p-7 rounded-3xl bg-white/[0.04] border border-white/10 hover:border-[#CDF22B]/60 transition-all group"
+                        data-reveal data-delay="140">
+                        <div class="flex items-center justify-between mb-6">
+                            <span
+                                class="font-display font-bold text-4xl text-white/20 group-hover:text-[#CDF22B] transition-colors">02</span>
+                            <span class="px-3 py-1 rounded-full bg-[#CDF22B] text-[#0A0B0F] text-[11px] font-bold">EDU
+                                &amp; Academy</span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl mb-3">Educate</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Real production experience becomes hands-on curriculum—accessible online anytime via TUT.EDU
+                            or face-to-face inside TUT.Academy labs.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="p-7 rounded-3xl bg-white/[0.04] border border-white/10 hover:border-[#CDF22B]/60 transition-all group"
+                        data-reveal data-delay="220">
+                        <div class="flex items-center justify-between mb-6">
+                            <span
+                                class="font-display font-bold text-4xl text-white/20 group-hover:text-[#CDF22B] transition-colors">03</span>
+                            <span
+                                class="px-3 py-1 rounded-full bg-white text-[#0A0B0F] text-[11px] font-bold">Entertainment</span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl mb-3">Showcase</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Breakthrough products from TUT.Company and top graduate creations take center stage at
+                            TUT.Entertainment expos, competitions, and tech festivals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= LEADERSHIP TEAM ================= -->
+        <section class="max-w-7xl mx-auto px-5 sm:px-8 py-20">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12" data-reveal>
+                <div>
+                    <span class="tut-badge mb-4">Leadership</span>
+                    <h2 class="font-display font-bold text-4xl sm:text-5xl tracking-tight text-[#0A0B0F]">
+                        The Minds Behind <span class="text-[#A3ACB9]">TUT.Company</span>
+                    </h2>
+                </div>
+                <p class="text-sm text-slate-500 max-w-sm">
+                    Engineers, educators, and event producers dedicated to building technology that scales and inspires.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Member 1 -->
+                <div class="group card-zoom bg-white rounded-[1.5rem] p-3 border border-slate-200/80 shadow-sm"
+                    data-reveal data-delay="50">
+                    <div class="rounded-2xl overflow-hidden aspect-[4/4.3] bg-slate-200 mb-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
+                            alt="Chief Executive Officer"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                    </div>
+                    <div class="px-2 pb-2">
+                        <h3 class="font-display font-bold text-base text-slate-900">Adrian Pratama</h3>
+                        <p class="text-xs font-semibold text-[#1E45FB] mt-0.5">Founder &amp; CEO</p>
+                        <p class="text-xs text-slate-500 mt-2">Leads ecosystem strategy across TUT.Company &amp; global
+                            partnerships.</p>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="group card-zoom bg-white rounded-[1.5rem] p-3 border border-slate-200/80 shadow-sm"
+                    data-reveal data-delay="120">
+                    <div class="rounded-2xl overflow-hidden aspect-[4/4.3] bg-slate-200 mb-4">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80"
+                            alt="Chief Technology Officer"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                    </div>
+                    <div class="px-2 pb-2">
+                        <h3 class="font-display font-bold text-base text-slate-900">Nadia Kusuma</h3>
+                        <p class="text-xs font-semibold text-[#1E45FB] mt-0.5">Chief Technology Officer</p>
+                        <p class="text-xs text-slate-500 mt-2">Heads AI research, cloud architecture, and IoT Robotics
+                            R&amp;D.</p>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="group card-zoom bg-white rounded-[1.5rem] p-3 border border-slate-200/80 shadow-sm"
+                    data-reveal data-delay="190">
+                    <div class="rounded-2xl overflow-hidden aspect-[4/4.3] bg-slate-200 mb-4">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80"
+                            alt="VP of Education"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                    </div>
+                    <div class="px-2 pb-2">
+                        <h3 class="font-display font-bold text-base text-slate-900">Raka Wijaya</h3>
+                        <p class="text-xs font-semibold text-[#1E45FB] mt-0.5">VP of Education</p>
+                        <p class="text-xs text-slate-500 mt-2">Directs curriculum design for TUT.EDU &amp; TUT.Academy
+                            labs.</p>
+                    </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="group card-zoom bg-white rounded-[1.5rem] p-3 border border-slate-200/80 shadow-sm"
+                    data-reveal data-delay="260">
+                    <div class="rounded-2xl overflow-hidden aspect-[4/4.3] bg-slate-200 mb-4">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80"
+                            alt="Head of TUT.Entertainment"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                    </div>
+                    <div class="px-2 pb-2">
+                        <h3 class="font-display font-bold text-base text-slate-900">Clara Santoso</h3>
+                        <p class="text-xs font-semibold text-[#1E45FB] mt-0.5">Head of TUT.Entertainment</p>
+                        <p class="text-xs text-slate-500 mt-2">Curates national tech expos, hackathons, and robotics
+                            showcases.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="relative z-10 bg-white border-t border-slate-200/80 pt-16 pb-8 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-12">
+                <div class="lg:col-span-6">
+                    <h3 class="font-display font-bold text-2xl sm:text-3xl text-slate-900 leading-snug mb-6">
+                        Building Tomorrow's<br />Tech &amp; Talent Ecosystem
+                    </h3>
+                    <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs font-semibold text-slate-500">
+                        <a href="index.html" class="hover:text-slate-900">Home</a>
+                        <a href="about.html" class="text-[#1E45FB]">About Us</a>
+                        <a href="solutions.html" class="hover:text-slate-900">Solutions</a>
+                        <a href="ecosystem.html" class="hover:text-slate-900">Ecosystem</a>
+                        <a href="events.html" class="hover:text-slate-900">Events</a>
+                        <a href="contact.html" class="hover:text-slate-900">Contact</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-6 lg:flex lg:justify-end">
+                    <div class="w-full max-w-sm">
+                        <p class="font-display font-semibold text-sm text-slate-900 mb-3">Subscribe to our tech dispatch
+                        </p>
+                        <form class="newsletter-form flex items-center gap-2">
+                            <input type="email" required placeholder="Enter your email address"
+                                class="flex-1 bg-[#F4F6F9] border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 focus:outline-none focus:border-[#1E45FB]" />
+                            <button type="submit" aria-label="Subscribe"
+                                class="w-11 h-11 rounded-xl bg-[#1E45FB] text-white flex items-center justify-center hover:bg-[#1432C8] transition-colors shrink-0">
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-watermark font-display font-bold text-center py-4 tracking-tighter">[TUT.COMPANY]</div>
+            <div
+                class="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+                <div class="flex items-center gap-4 text-slate-500">
+                    <a href="#" class="hover:text-[#1E45FB]"><i data-lucide="github" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-[#1E45FB]"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-[#1E45FB]"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-[#1E45FB]"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+                </div>
+                <p>&copy; 2026 TUT.Company. All rights reserved.</p>
+                <div class="flex items-center gap-5">
+                    <a href="ecosystem.html#edu" class="hover:text-slate-900">TUT.EDU</a>
+                    <a href="ecosystem.html#academy" class="hover:text-slate-900">TUT.Academy</a>
+                    <a href="ecosystem.html#entertainment" class="hover:text-slate-900">TUT.Entertainment</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

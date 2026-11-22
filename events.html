@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events &amp; News — TUT.Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { tutBlue: '#1E45FB', tutLime: '#CDF22B', tutDark: '#0A0B0F', tutMuted: '#A3ACB9' }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="bg-[#F7F8FA] text-slate-900 antialiased selection:bg-[#CDF22B] selection:text-[#0A0B0F] overflow-x-hidden">
+
+    <div id="scroll-progress"></div>
+    <div class="tech-grid-lines hidden md:grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+    <header id="main-navbar" class="fixed top-0 inset-x-0 z-40 transition-all duration-300 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2.5 group">
+                <div
+                    class="w-9 h-9 rounded-xl bg-[#0A0B0F] flex items-center justify-center shadow-sm group-hover:bg-[#1E45FB] transition-colors">
+                    <span
+                        class="w-3.5 h-3.5 rounded-sm bg-[#CDF22B] rotate-45 block transition-transform duration-300 group-hover:rotate-90"></span>
+                </div>
+                <span class="font-display font-bold text-lg tracking-tight text-slate-900">TUT<span
+                        class="text-[#1E45FB]">.Company</span></span>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-500">
+                <a href="index.html" class="hover:text-slate-900 transition-colors">Home</a>
+                <a href="about.html" class="hover:text-slate-900 transition-colors">About Us</a>
+                <a href="solutions.html" class="hover:text-slate-900 transition-colors">Solutions</a>
+                <a href="ecosystem.html" class="hover:text-slate-900 transition-colors">Ecosystem</a>
+                <a href="events.html" class="text-[#1E45FB] font-semibold flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#1E45FB]"></span> Events
+                </a>
+            </nav>
+
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="ecosystem.html#edu"
+                    class="px-4 py-2 rounded-full border border-slate-300 text-xs font-semibold text-slate-800 hover:border-slate-900 transition-colors">TUT.EDU</a>
+                <a href="contact.html"
+                    class="btn-pill px-5 py-2.5 rounded-full bg-[#1E45FB] text-white text-xs font-semibold flex items-center gap-2">
+                    <span>Contact Us</span>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 btn-arrow"></i>
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false"
+                class="lg:hidden p-2 rounded-xl border border-slate-200 bg-white text-slate-800">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 px-6 py-5 shadow-xl">
+            <div class="flex flex-col gap-4 text-sm font-semibold text-slate-700">
+                <a href="index.html" class="hover:text-[#1E45FB]">Home</a>
+                <a href="about.html" class="hover:text-[#1E45FB]">About Us</a>
+                <a href="solutions.html" class="hover:text-[#1E45FB]">Solutions &amp; Core Tech</a>
+                <a href="ecosystem.html" class="hover:text-[#1E45FB]">Our Ecosystem</a>
+                <a href="events.html" class="text-[#1E45FB]">Events &amp; News</a>
+                <a href="contact.html"
+                    class="mt-2 inline-flex justify-center items-center gap-2 px-5 py-3 rounded-full bg-[#1E45FB] text-white">
+                    Contact Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-32 sm:pt-36">
+
+        <!-- ================= PAGE HERO ================= -->
+        <section class="max-w-7xl mx-auto px-5 sm:px-8 pb-14">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+                <div class="lg:col-span-8" data-reveal="left">
+                    <span class="tut-badge mb-5">TUT.Entertainment &amp; Newsroom</span>
+                    <h1
+                        class="font-display font-bold text-5xl sm:text-6xl lg:text-7xl leading-[0.98] tracking-tight text-[#0A0B0F]">
+                        Live Stages &amp;
+                        <span class="block text-[#A3ACB9] mt-1">Tech Dispatches</span>
+                    </h1>
+                </div>
+                <div class="lg:col-span-4" data-reveal="right">
+                    <p class="text-sm sm:text-base text-slate-500 leading-relaxed">
+                        Experience TUT.Company breakthroughs live on stage through IT expos, robotics tournaments,
+                        hackathons, and official R&amp;D announcements.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= FLAGSHIP EXPO SPOTLIGHT + LIVE COUNTDOWN ================= -->
+        <section class="max-w-7xl mx-auto px-3 sm:px-8 pb-20">
+            <div class="bg-[#0A0B0F] text-white rounded-[2.25rem] overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12"
+                data-reveal="scale">
+                <!-- Left Content -->
+                <div class="lg:col-span-7 p-7 sm:p-12 lg:p-14 flex flex-col justify-between">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-3 mb-6">
+                            <span
+                                class="px-3.5 py-1 rounded-full bg-[#CDF22B] text-[#0A0B0F] text-[11px] font-bold uppercase tracking-wider">Flagship
+                                Expo 2026</span>
+                            <span class="text-xs font-medium text-slate-400 flex items-center gap-1.5">
+                                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#CDF22B]"></i> Jakarta Convention Hall
+                            </span>
+                        </div>
+                        <h2 class="font-display font-bold text-3xl sm:text-5xl tracking-tight leading-[1.08] mb-4">
+                            TUT Tech Expo 2026:<br />
+                            <span class="text-slate-400">Future Systems Live</span>
+                        </h2>
+                        <p class="text-sm sm:text-base text-slate-400 leading-relaxed max-w-xl mb-8">
+                            Three days of live AI product reveals, autonomous robotics demos from TUT.Company R&amp;D
+                            labs, plus showcase booths by top TUT.EDU and TUT.Academy builders.
+                        </p>
+                    </div>
+
+                    <!-- Live Countdown Grid -->
+                    <div>
+                        <p class="text-[11px] font-bold uppercase tracking-widest text-slate-500 mb-3">Starts December
+                            14, 2026</p>
+                        <div class="grid grid-cols-4 gap-3 max-w-md mb-8">
+                            <div class="rounded-2xl bg-white/[0.05] border border-white/10 p-3.5 text-center">
+                                <span id="cd-days"
+                                    class="font-display font-bold text-2xl sm:text-3xl text-white block">00</span>
+                                <span class="text-[10px] uppercase tracking-wider text-slate-400">Days</span>
+                            </div>
+                            <div class="rounded-2xl bg-white/[0.05] border border-white/10 p-3.5 text-center">
+                                <span id="cd-hours"
+                                    class="font-display font-bold text-2xl sm:text-3xl text-white block">00</span>
+                                <span class="text-[10px] uppercase tracking-wider text-slate-400">Hours</span>
+                            </div>
+                            <div class="rounded-2xl bg-white/[0.05] border border-white/10 p-3.5 text-center">
+                                <span id="cd-mins"
+                                    class="font-display font-bold text-2xl sm:text-3xl text-white block">00</span>
+                                <span class="text-[10px] uppercase tracking-wider text-slate-400">Mins</span>
+                            </div>
+                            <div class="rounded-2xl bg-white/[0.05] border border-white/10 p-3.5 text-center">
+                                <span id="cd-secs"
+                                    class="font-display font-bold text-2xl sm:text-3xl text-[#CDF22B] block">00</span>
+                                <span class="text-[10px] uppercase tracking-wider text-slate-400">Secs</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-3">
+                            <button onclick="openEventModal('expo-2026')"
+                                class="btn-pill inline-flex items-center gap-2.5 pl-6 pr-2.5 py-2.5 rounded-full bg-[#1E45FB] text-white text-xs sm:text-sm font-semibold">
+                                <span>Reserve Free Expo Pass</span>
+                                <span
+                                    class="w-7 h-7 rounded-full bg-white text-[#1E45FB] flex items-center justify-center btn-arrow">
+                                    <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                                </span>
+                            </button>
+                            <a href="contact.html"
+                                class="px-5 py-3 rounded-full border border-white/15 text-xs font-semibold text-slate-300 hover:border-[#CDF22B] hover:text-white transition-colors">
+                                Sponsor or Exhibit
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual -->
+                <div class="lg:col-span-5 relative min-h-[280px] lg:min-h-full bg-slate-900">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80"
+                        alt="TUT Tech Expo Stage" class="w-full h-full object-cover opacity-85" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#0A0B0F] via-transparent to-transparent lg:bg-gradient-to-r">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= FILTERABLE EVENTS & NEWS CATALOG ================= -->
+        <section class="max-w-7xl mx-auto px-5 sm:px-8 pb-24">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10" data-reveal>
+                <div>
+                    <span class="tut-badge mb-4">Calendar &amp; Updates</span>
+                    <h2 class="font-display font-bold text-4xl sm:text-5xl tracking-tight text-[#0A0B0F]">
+                        Explore <span class="text-[#A3ACB9]">Lineup</span>
+                    </h2>
+                </div>
+
+                <!-- Filter Pills -->
+                <div id="event-filters" class="flex flex-wrap gap-2">
+                    <button data-filter="all"
+                        class="ev-filter px-4 py-2 rounded-full text-xs font-semibold bg-[#0A0B0F] text-white transition-all">All
+                        Updates</button>
+                    <button data-filter="expo"
+                        class="ev-filter px-4 py-2 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:border-slate-900 transition-all">Tech
+                        Expos</button>
+                    <button data-filter="competition"
+                        class="ev-filter px-4 py-2 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:border-slate-900 transition-all">Competitions</button>
+                    <button data-filter="news"
+                        class="ev-filter px-4 py-2 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:border-slate-900 transition-all">Company
+                        News</button>
+                </div>
+            </div>
+
+            <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+        </section>
+
+    </main>
+
+    <!-- ================= EVENT DETAIL / RSVP MODAL ================= -->
+    <div id="event-modal"
+        class="modal-overlay fixed inset-0 z-50 bg-slate-950/65 backdrop-blur-sm flex items-center justify-center p-4">
+        <div
+            class="modal-box bg-white rounded-3xl max-w-xl w-full overflow-hidden shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button id="em-close" aria-label="Close modal"
+                class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white/95 hover:bg-[#CDF22B] flex items-center justify-center text-slate-900 shadow transition-colors">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+            <div class="h-48 sm:h-56 bg-slate-900 overflow-hidden">
+                <img id="em-img" src="" alt="" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-6 sm:p-8">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                    <span id="em-badge"
+                        class="px-3 py-1 rounded-full bg-[#CDF22B] text-[#0A0B0F] text-[11px] font-bold"></span>
+                    <span id="em-date" class="text-xs font-semibold text-slate-500"></span>
+                </div>
+                <h3 id="em-title" class="font-display font-bold text-2xl text-slate-900 mb-2"></h3>
+                <p id="em-location" class="text-xs font-semibold text-[#1E45FB] flex items-center gap-1.5 mb-4"></p>
+                <p id="em-summary" class="text-sm text-slate-600 leading-relaxed mb-6"></p>
+
+                <!-- Dynamic RSVP Form (Hidden for Company News) -->
+                <form id="rsvp-form" class="bg-[#F7F8FA] rounded-2xl p-5 border border-slate-200/70 space-y-3">
+                    <p class="font-display font-bold text-sm text-slate-900">Quick Registration</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <input type="text" required placeholder="Your full name"
+                            class="bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-[#1E45FB]" />
+                        <input type="email" required placeholder="Email address"
+                            class="bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-[#1E45FB]" />
+                    </div>
+                    <select
+                        class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-700 focus:outline-none focus:border-[#1E45FB]">
+                        <option>Attendee / Visitor Pass</option>
+                        <option>Competition Participant</option>
+                        <option>Media &amp; Community Partner</option>
+                    </select>
+                    <button type="submit"
+                        class="btn-pill w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#1E45FB] text-white text-xs font-semibold">
+                        <span>Confirm Registration</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 btn-arrow"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="relative z-10 bg-white border-t border-slate-200/80 pt-16 pb-8 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-12">
+                <div class="lg:col-span-6">
+                    <h3 class="font-display font-bold text-2xl sm:text-3xl text-slate-900 leading-snug mb-6">
+                        Building Tomorrow's<br />Tech &amp; Talent Ecosystem
+                    </h3>
+                    <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs font-semibold text-slate-500">
+                        <a href="index.html" class="hover:text-slate-900">Home</a>
+                        <a href="about.html" class="hover:text-slate-900">About Us</a>
+                        <a href="solutions.html" class="hover:text-slate-900">Solutions</a>
+                        <a href="ecosystem.html" class="hover:text-slate-900">Ecosystem</a>
+                        <a href="events.html" class="text-[#1E45FB]">Events</a>
+                        <a href="contact.html" class="hover:text-slate-900">Contact</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-6 lg:flex lg:justify-end">
+                    <div class="w-full max-w-sm">
+                        <p class="font-display font-semibold text-sm text-slate-900 mb-3">Subscribe to our tech dispatch
+                        </p>
+                        <form class="newsletter-form flex items-center gap-2">
+                            <input type="email" required placeholder="Enter your email address"
+                                class="flex-1 bg-[#F4F6F9] border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 focus:outline-none focus:border-[#1E45FB]" />
+                            <button type="submit" aria-label="Subscribe"
+                                class="w-11 h-11 rounded-xl bg-[#1E45FB] text-white flex items-center justify-center hover:bg-[#1432C8] transition-colors shrink-0">
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-watermark font-display font-bold text-center py-4 tracking-tighter">[TUT.COMPANY]</div>
+            <div
+                class="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+                <div class="flex items-center gap-4 text-slate-500">
+                    <a href="#" class="hover:text-[#1E45FB]"><i data-lucide="github" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-[#1E45FB]"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-[#1E45FB]"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-[#1E45FB]"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+                </div>
+                <p>&copy; 2026 TUT.Company. All rights reserved.</p>
+                <div class="flex items-center gap-5">
+                    <a href="ecosystem.html#edu" class="hover:text-slate-900">TUT.EDU</a>
+                    <a href="ecosystem.html#academy" class="hover:text-slate-900">TUT.Academy</a>
+                    <a href="ecosystem.html#entertainment" class="hover:text-slate-900">TUT.Entertainment</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Live Countdown to TUT Tech Expo (Dec 14, 2026 09:00 WIB)
+            const targetDate = new Date("2026-12-14T09:00:00+07:00").getTime();
+            function updateCountdown() {
+                const diff = Math.max(0, targetDate - Date.now());
+                const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const m = Math.floor((diff / (1000 * 60)) % 60);
+                const s = Math.floor((diff / 1000) % 60);
+                document.getElementById("cd-days").textContent = String(d).padStart(2, "0");
+                document.getElementById("cd-hours").textContent = String(h).padStart(2, "0");
+                document.getElementById("cd-mins").textContent = String(m).padStart(2, "0");
+                document.getElementById("cd-secs").textContent = String(s).padStart(2, "0");
+            }
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            // 2. Render & Filter Events
+            const grid = document.getElementById("events-grid");
+            const filterBtns = document.querySelectorAll(".ev-filter");
+            const modal = document.getElementById("event-modal");
+            const closeBtn = document.getElementById("em-close");
+            const rsvpForm = document.getElementById("rsvp-form");
+
+            function renderEvents(type = "all") {
+                const list = type === "all"
+                    ? TUT_DATA.events
+                    : TUT_DATA.events.filter(e => e.type === type);
+
+                grid.innerHTML = list.map((ev, i) => `
+          <article onclick="openEventModal('${ev.id}')" style="animation: fadeUp 0.45s cubic-bezier(0.16,1,0.3,1) ${i * 70}ms both" class="card-zoom cursor-pointer group bg-white rounded-[1.75rem] p-3.5 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#1E45FB]/40 transition-all flex flex-col">
+            <div class="relative rounded-2xl overflow-hidden h-56 bg-slate-900 mb-5">
+              <img src="${ev.image}" alt="${ev.title}" class="w-full h-full object-cover" />
+              <span class="absolute top-4 left-4 px-3.5 py-1 rounded-full ${ev.type === 'news' ? 'bg-white text-[#0A0B0F]' : 'bg-[#CDF22B] text-[#0A0B0F]'} text-[11px] font-bold shadow-sm">
+                ${ev.typeLabel}
+              </span>
+            </div>
+            <div class="px-2 pb-2 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex flex-wrap items-center gap-3 text-xs font-medium text-slate-400 mb-2">
+                  <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-[#1E45FB]"></i>${ev.date}</span>
+                  <span>&bull;</span>
+                  <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#1E45FB]"></i>${ev.location}</span>
+                </div>
+                <h3 class="font-display font-bold text-xl sm:text-2xl text-slate-900 group-hover:text-[#1E45FB] transition-colors mb-2.5">${ev.title}</h3>
+                <p class="text-sm text-slate-500 leading-relaxed mb-5">${ev.summary}</p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-800 group-hover:text-[#1E45FB] transition-colors">
+                <span>${ev.type === "news" ? "Read Full Announcement" : "View Details & Register"}</span>
+                <span class="w-8 h-8 rounded-full bg-[#F4F6F9] group-hover:bg-[#1E45FB] group-hover:text-white flex items-center justify-center transition-colors">
+                  <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                </span>
+              </div>
+            </div>
+          </article>
+        `).join("");
+
+                if (window.lucide) lucide.createIcons();
+            }
+
+            window.openEventModal = (id) => {
+                const ev = TUT_DATA.events.find(e => e.id === id);
+                if (!ev) return;
+                document.getElementById("em-img").src = ev.image;
+                document.getElementById("em-img").alt = ev.title;
+                document.getElementById("em-badge").textContent = ev.typeLabel;
+                document.getElementById("em-date").textContent = ev.date;
+                document.getElementById("em-title").textContent = ev.title;
+                document.getElementById("em-location").innerHTML = `<i data-lucide="map-pin" class="w-3.5 h-3.5"></i> ${ev.location}`;
+                document.getElementById("em-summary").textContent = ev.summary;
+
+                rsvpForm.classList.toggle("hidden", ev.type === "news");
+                modal.classList.add("active");
+                document.body.style.overflow = "hidden";
+                if (window.lucide) lucide.createIcons();
+            };
+
+            const closeModal = () => {
+                modal.classList.remove("active");
+                document.body.style.overflow = "";
+            };
+
+            closeBtn.addEventListener("click", closeModal);
+            modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+            document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+
+            rsvpForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+                rsvpForm.reset();
+                closeModal();
+                showToast("Spot reserved! Your event e-pass has been sent to your email.");
+            });
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    filterBtns.forEach(b => {
+                        b.classList.remove("bg-[#0A0B0F]", "text-white");
+                        b.classList.add("bg-white", "border", "border-slate-200", "text-slate-600");
+                    });
+                    btn.classList.remove("bg-white", "border", "border-slate-200", "text-slate-600");
+                    btn.classList.add("bg-[#0A0B0F]", "text-white");
+                    renderEvents(btn.dataset.filter);
+                });
+            });
+
+            const style = document.createElement("style");
+            style.textContent = `@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }`;
+            document.head.appendChild(style);
+
+            renderEvents("all");
+        });
+    </script>
+</body>
+
+</html>

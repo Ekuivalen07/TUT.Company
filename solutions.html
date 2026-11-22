@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solutions &amp; Projects — TUT.Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { tutBlue: '#1E45FB', tutLime: '#CDF22B', tutDark: '#0A0B0F', tutMuted: '#A3ACB9' }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="bg-[#F7F8FA] text-slate-900 antialiased selection:bg-[#CDF22B] selection:text-[#0A0B0F] overflow-x-hidden">
+
+    <div id="scroll-progress"></div>
+    <div class="tech-grid-lines hidden md:grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+    <header id="main-navbar" class="fixed top-0 inset-x-0 z-40 transition-all duration-300 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2.5 group">
+                <div
+                    class="w-9 h-9 rounded-xl bg-[#0A0B0F] flex items-center justify-center shadow-sm group-hover:bg-[#1E45FB] transition-colors">
+                    <span
+                        class="w-3.5 h-3.5 rounded-sm bg-[#CDF22B] rotate-45 block transition-transform duration-300 group-hover:rotate-90"></span>
+                </div>
+                <span class="font-display font-bold text-lg tracking-tight text-slate-900">TUT<span
+                        class="text-[#1E45FB]">.Company</span></span>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-500">
+                <a href="index.html" class="hover:text-slate-900 transition-colors">Home</a>
+                <a href="about.html" class="hover:text-slate-900 transition-colors">About Us</a>
+                <a href="solutions.html" class="text-[#1E45FB] font-semibold flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#1E45FB]"></span> Solutions
+                </a>
+                <a href="ecosystem.html" class="hover:text-slate-900 transition-colors">Ecosystem</a>
+                <a href="events.html" class="hover:text-slate-900 transition-colors">Events</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="ecosystem.html#edu"
+                    class="px-4 py-2 rounded-full border border-slate-300 text-xs font-semibold text-slate-800 hover:border-slate-900 transition-colors">TUT.EDU</a>
+                <a href="contact.html"
+                    class="btn-pill px-5 py-2.5 rounded-full bg-[#1E45FB] text-white text-xs font-semibold flex items-center gap-2">
+                    <span>Contact Us</span>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 btn-arrow"></i>
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false"
+                class="lg:hidden p-2 rounded-xl border border-slate-200 bg-white text-slate-800">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 px-6 py-5 shadow-xl">
+            <div class="flex flex-col gap-4 text-sm font-semibold text-slate-700">
+                <a href="index.html" class="hover:text-[#1E45FB]">Home</a>
+                <a href="about.html" class="hover:text-[#1E45FB]">About Us</a>
+                <a href="solutions.html" class="text-[#1E45FB]">Solutions &amp; Core Tech</a>
+                <a href="ecosystem.html" class="hover:text-[#1E45FB]">Our Ecosystem</a>
+                <a href="events.html" class="hover:text-[#1E45FB]">Events &amp; News</a>
+                <a href="contact.html"
+                    class="mt-2 inline-flex justify-center items-center gap-2 px-5 py-3 rounded-full bg-[#1E45FB] text-white">
+                    Contact Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-32 sm:pt-36">
+
+        <!-- ================= PAGE HERO ================= -->
+        <section class="max-w-7xl mx-auto px-5 sm:px-8 pb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+                <div class="lg:col-span-8" data-reveal="left">
+                    <span class="tut-badge mb-5">Core Engineering</span>
+                    <h1
+                        class="font-display font-bold text-5xl sm:text-6xl lg:text-7xl leading-[0.98] tracking-tight text-[#0A0B0F]">
+                        Technology Built
+                        <span class="block text-[#A3ACB9] mt-1">For Real Impact</span>
+                    </h1>
+                </div>
+                <div class="lg:col-span-4" data-reveal="right">
+                    <p class="text-sm sm:text-base text-slate-500 leading-relaxed mb-5">
+                        Four specialized engineering divisions inside TUT.Company delivering production systems from
+                        software clouds to physical autonomous robots.
+                    </p>
+                    <a href="contact.html"
+                        class="btn-pill inline-flex items-center gap-2.5 pl-5 pr-2 py-2 rounded-full bg-[#1E45FB] text-white text-xs font-semibold">
+                        <span>Request Custom Build</span>
+                        <span
+                            class="w-7 h-7 rounded-full bg-white text-[#1E45FB] flex items-center justify-center btn-arrow">
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 4 CORE DIVISIONS (DARK BENTO) ================= -->
+        <section class="max-w-7xl mx-auto px-3 sm:px-8 pb-20">
+            <div class="bg-[#0A0B0F] text-white rounded-[2.25rem] px-6 sm:px-12 py-14 sm:py-16 shadow-2xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- AI -->
+                    <div id="ai"
+                        class="scroll-mt-28 p-7 rounded-3xl bg-white/[0.04] border border-white/10 hover:border-[#CDF22B]/60 transition-all"
+                        data-reveal data-delay="40">
+                        <div class="flex items-center justify-between mb-6">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-[#CDF22B] text-[#0A0B0F] flex items-center justify-center">
+                                <i data-lucide="cpu" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-mono text-slate-400">DIV // 01</span>
+                        </div>
+                        <h2 class="font-display font-bold text-2xl mb-2.5">Artificial Intelligence</h2>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-5">
+                            Custom LLM assistants, real-time computer vision inspection, and predictive analytics
+                            engineered for accuracy and enterprise privacy.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-white/10 text-xs text-slate-200">LLM Agents</span>
+                            <span class="px-3 py-1 rounded-full bg-white/10 text-xs text-slate-200">Computer
+                                Vision</span>
+                            <span class="px-3 py-1 rounded-full bg-white/10 text-xs text-slate-200">Edge AI</span>
+                        </div>
+                    </div>
+
+                    <!-- Software & Programming -->
+                    <div id="programming"
+                        class="scroll-mt-28 p-7 rounded-3xl bg-white/[0.04] border border-white/10 hover:border-[#CDF22B]/60 transition-all"
+                        data-reveal data-delay="110">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-12 h-12 rounded-2xl bg-[#1E45FB] text-white flex items-center justify-center">
+                                <i data-lucide="terminal" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-mono text-slate-400">DIV // 02</span>
+                        </div>
+                        <h2 class="font-display font-bold text-2xl mb-2.5">Software &amp; Programming</h2>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-5">
+                            Resilient backend services, distributed API gateways, database optimization, and automated
+                            cloud CI/CD pipelines.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-white/10 text-xs text-slate-200">Microservices</span>
+                            <span class="px-3 py-1 rounded-full bg-white/10 text-xs text-slate-200">Cloud
+                                Architecture</span>
+                            <span class="px-3 py-1 rounded-full bg-white/10 text-xs text-slate-200">API Gateways</span>
+                        </div>
+                    </div>
+
+                    <!-- App & Web -->
+                    <div id="appweb"
+                        class="scroll-mt-28 p-7 rounded-3xl bg-white/[0.04] border border-white/10 hover:border-[#CDF22B]/60 transition-all"
+                        data-reveal data-delay="180">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-12 h-12 rounded-2xl bg-white text-[#0A0B0F] flex items-center justify-center">
+                                <i data-lucide="layers" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-mono text-slate-400">DIV // 03</span>
+                        </div>
+                        <h2 class="font-display font-bold text-2xl mb-2.5">App &amp; Web Platforms</h2>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-5">
+                            Interactive web portals, SaaS dashboards, and native-grade mobile applications designed with
+                            clean, modern interfaces.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-white/10 text-xs text-slate-200">Full-Stack
+                                Web</span>
+                            <span class="px-3 py-1 rounded-full bg-white/10 text-xs text-slate-200">iOS &amp;
+                                Android</span>
+                            <span class="px-3 py-1 rounded-full bg-white/10 text-xs text-slate-200">UI/UX Systems</span>
+                        </div>
+                    </div>
+
+                    <!-- IoT & Robotics -->
+                    <div id="iot"
+                        class="scroll-mt-28 p-7 rounded-3xl bg-white/[0.04] border border-white/10 hover:border-[#CDF22B]/60 transition-all"
+                        data-reveal data-delay="250">
+                        <div class="flex items-center justify-between mb-6">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-[#CDF22B] text-[#0A0B0F] flex items-center justify-center">
+                                <i data-lucide="bot" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-mono text-slate-400">DIV // 04</span>
+                        </div>
+                        <h2 class="font-display font-bold text-2xl mb-2.5">IoT &amp; Robotics</h2>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-5">
+                            Autonomous rovers, smart environmental telemetry grids, embedded microcontrollers, and live
+                            hardware prototypes showcased at our expos.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-white/10 text-xs text-slate-200">Autonomous
+                                Bots</span>
+                            <span class="px-3 py-1 rounded-full bg-white/10 text-xs text-slate-200">Smart Sensors</span>
+                            <span class="px-3 py-1 rounded-full bg-white/10 text-xs text-slate-200">ROS2 &amp;
+                                Embedded</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= INTERACTIVE FILTERABLE PROJECTS ================= -->
+        <section class="max-w-7xl mx-auto px-5 sm:px-8 pb-24">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10" data-reveal>
+                <div>
+                    <span class="tut-badge mb-4">Featured Work</span>
+                    <h2 class="font-display font-bold text-4xl sm:text-5xl tracking-tight text-[#0A0B0F]">
+                        Innovation <span class="text-[#A3ACB9]">Showcase</span>
+                    </h2>
+                </div>
+
+                <!-- Category Filter Pills -->
+                <div id="project-filters" class="flex flex-wrap gap-2">
+                    <button data-filter="all"
+                        class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-[#0A0B0F] text-white transition-all">All
+                        Projects</button>
+                    <button data-filter="ai"
+                        class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:border-slate-900 transition-all">AI</button>
+                    <button data-filter="programming"
+                        class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:border-slate-900 transition-all">Software</button>
+                    <button data-filter="appweb"
+                        class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:border-slate-900 transition-all">App
+                        &amp; Web</button>
+                    <button data-filter="iot"
+                        class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:border-slate-900 transition-all">IoT
+                        &amp; Robotics</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Project Grid -->
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </section>
+
+    </main>
+
+    <!-- ================= PROJECT DETAIL MODAL ================= -->
+    <div id="project-modal"
+        class="modal-overlay fixed inset-0 z-50 bg-slate-950/65 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-box bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative">
+            <button id="pm-close" aria-label="Close modal"
+                class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white/90 hover:bg-[#CDF22B] flex items-center justify-center text-slate-900 shadow transition-colors">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+            <div class="h-56 sm:h-64 bg-slate-900 overflow-hidden">
+                <img id="pm-img" src="" alt="" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-6 sm:p-8">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                    <span id="pm-cat"
+                        class="px-3 py-1 rounded-full bg-[#CDF22B] text-[#0A0B0F] text-[11px] font-bold"></span>
+                    <span id="pm-meta" class="text-xs font-medium text-slate-400"></span>
+                </div>
+                <h3 id="pm-title" class="font-display font-bold text-2xl sm:text-3xl text-slate-900 mb-3"></h3>
+                <p id="pm-summary" class="text-sm text-slate-600 leading-relaxed mb-6"></p>
+                <div class="mb-6">
+                    <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2.5">Tech Stack</p>
+                    <div id="pm-tech" class="flex flex-wrap gap-2"></div>
+                </div>
+                <a href="contact.html"
+                    class="btn-pill w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-[#1E45FB] text-white text-xs font-semibold">
+                    <span>Build Something Similar</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 btn-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="relative z-10 bg-white border-t border-slate-200/80 pt-16 pb-8 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-12">
+                <div class="lg:col-span-6">
+                    <h3 class="font-display font-bold text-2xl sm:text-3xl text-slate-900 leading-snug mb-6">
+                        Building Tomorrow's<br />Tech &amp; Talent Ecosystem
+                    </h3>
+                    <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs font-semibold text-slate-500">
+                        <a href="index.html" class="hover:text-slate-900">Home</a>
+                        <a href="about.html" class="hover:text-slate-900">About Us</a>
+                        <a href="solutions.html" class="text-[#1E45FB]">Solutions</a>
+                        <a href="ecosystem.html" class="hover:text-slate-900">Ecosystem</a>
+                        <a href="events.html" class="hover:text-slate-900">Events</a>
+                        <a href="contact.html" class="hover:text-slate-900">Contact</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-6 lg:flex lg:justify-end">
+                    <div class="w-full max-w-sm">
+                        <p class="font-display font-semibold text-sm text-slate-900 mb-3">Subscribe to our tech dispatch
+                        </p>
+                        <form class="newsletter-form flex items-center gap-2">
+                            <input type="email" required placeholder="Enter your email address"
+                                class="flex-1 bg-[#F4F6F9] border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 focus:outline-none focus:border-[#1E45FB]" />
+                            <button type="submit" aria-label="Subscribe"
+                                class="w-11 h-11 rounded-xl bg-[#1E45FB] text-white flex items-center justify-center hover:bg-[#1432C8] transition-colors shrink-0">
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-watermark font-display font-bold text-center py-4 tracking-tighter">[TUT.COMPANY]</div>
+            <div
+                class="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+                <div class="flex items-center gap-4 text-slate-500">
+                    <a href="#" class="hover:text-[#1E45FB]"><i data-lucide="github" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-[#1E45FB]"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-[#1E45FB]"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-[#1E45FB]"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+                </div>
+                <p>&copy; 2026 TUT.Company. All rights reserved.</p>
+                <div class="flex items-center gap-5">
+                    <a href="ecosystem.html#edu" class="hover:text-slate-900">TUT.EDU</a>
+                    <a href="ecosystem.html#academy" class="hover:text-slate-900">TUT.Academy</a>
+                    <a href="ecosystem.html#entertainment" class="hover:text-slate-900">TUT.Entertainment</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const grid = document.getElementById("projects-grid");
+            const filterBtns = document.querySelectorAll(".filter-btn");
+            const modal = document.getElementById("project-modal");
+            const closeBtn = document.getElementById("pm-close");
+
+            function renderProjects(category = "all") {
+                const list = category === "all"
+                    ? TUT_DATA.projects
+                    : TUT_DATA.projects.filter(p => p.category === category);
+
+                grid.innerHTML = list.map((p, i) => `
+          <article onclick="openProjectDetail('${p.id}')" style="animation: fadeUp 0.45s cubic-bezier(0.16,1,0.3,1) ${i * 60}ms both" class="card-zoom cursor-pointer group bg-white rounded-[1.75rem] p-3 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#1E45FB]/40 transition-all">
+            <div class="relative rounded-2xl overflow-hidden h-52 bg-slate-900 mb-4">
+              <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover" />
+              <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-white/95 text-[#0A0B0F] text-[11px] font-bold shadow-sm">${p.categoryLabel}</span>
+            </div>
+            <div class="px-2 pb-2">
+              <div class="flex items-center justify-between text-xs text-slate-400 mb-1.5">
+                <span>${p.client}</span>
+                <span class="font-mono">${p.year}</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-slate-900 group-hover:text-[#1E45FB] transition-colors mb-2 flex items-center justify-between">
+                ${p.title}
+                <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-50 group-hover:opacity-100"></i>
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-500 leading-relaxed line-clamp-2 mb-4">${p.summary}</p>
+              <div class="flex flex-wrap gap-1.5">
+                ${p.tech.map(t => `<span class="px-2.5 py-1 rounded-lg bg-[#F4F6F9] text-[11px] font-semibold text-slate-600">${t}</span>`).join("")}
+              </div>
+            </div>
+          </article>
+        `).join("");
+
+                if (window.lucide) lucide.createIcons();
+            }
+
+            window.openProjectDetail = (id) => {
+                const p = TUT_DATA.projects.find(item => item.id === id);
+                if (!p) return;
+                document.getElementById("pm-img").src = p.image;
+                document.getElementById("pm-img").alt = p.title;
+                document.getElementById("pm-cat").textContent = p.categoryLabel;
+                document.getElementById("pm-meta").textContent = `${p.client} • ${p.year}`;
+                document.getElementById("pm-title").textContent = p.title;
+                document.getElementById("pm-summary").textContent = p.summary;
+                document.getElementById("pm-tech").innerHTML = p.tech
+                    .map(t => `<span class="px-3 py-1.5 rounded-xl bg-[#F4F6F9] text-xs font-semibold text-slate-800">${t}</span>`)
+                    .join("");
+                modal.classList.add("active");
+                document.body.style.overflow = "hidden";
+            };
+
+            const closeModal = () => {
+                modal.classList.remove("active");
+                document.body.style.overflow = "";
+            };
+
+            closeBtn.addEventListener("click", closeModal);
+            modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+            document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    filterBtns.forEach(b => {
+                        b.classList.remove("bg-[#0A0B0F]", "text-white");
+                        b.classList.add("bg-white", "border", "border-slate-200", "text-slate-600");
+                    });
+                    btn.classList.remove("bg-white", "border", "border-slate-200", "text-slate-600");
+                    btn.classList.add("bg-[#0A0B0F]", "text-white");
+                    renderProjects(btn.dataset.filter);
+                });
+            });
+
+            // Inject mini keyframe for filter transitions
+            const style = document.createElement("style");
+            style.textContent = `@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }`;
+            document.head.appendChild(style);
+
+            renderProjects("all");
+        });
+    </script>
+</body>
+
+</html>

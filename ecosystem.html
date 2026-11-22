@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Ecosystem — TUT.Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { tutBlue: '#1E45FB', tutLime: '#CDF22B', tutDark: '#0A0B0F', tutMuted: '#A3ACB9' }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="bg-[#F7F8FA] text-slate-900 antialiased selection:bg-[#CDF22B] selection:text-[#0A0B0F] overflow-x-hidden">
+
+    <div id="scroll-progress"></div>
+    <div class="tech-grid-lines hidden md:grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+    <header id="main-navbar" class="fixed top-0 inset-x-0 z-40 transition-all duration-300 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2.5 group">
+                <div
+                    class="w-9 h-9 rounded-xl bg-[#0A0B0F] flex items-center justify-center shadow-sm group-hover:bg-[#1E45FB] transition-colors">
+                    <span
+                        class="w-3.5 h-3.5 rounded-sm bg-[#CDF22B] rotate-45 block transition-transform duration-300 group-hover:rotate-90"></span>
+                </div>
+                <span class="font-display font-bold text-lg tracking-tight text-slate-900">TUT<span
+                        class="text-[#1E45FB]">.Company</span></span>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-500">
+                <a href="index.html" class="hover:text-slate-900 transition-colors">Home</a>
+                <a href="about.html" class="hover:text-slate-900 transition-colors">About Us</a>
+                <a href="solutions.html" class="hover:text-slate-900 transition-colors">Solutions</a>
+                <a href="ecosystem.html" class="text-[#1E45FB] font-semibold flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#1E45FB]"></span> Ecosystem
+                </a>
+                <a href="events.html" class="hover:text-slate-900 transition-colors">Events</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="ecosystem.html#edu"
+                    class="px-4 py-2 rounded-full border border-slate-300 text-xs font-semibold text-slate-800 hover:border-slate-900 transition-colors">TUT.EDU</a>
+                <a href="contact.html"
+                    class="btn-pill px-5 py-2.5 rounded-full bg-[#1E45FB] text-white text-xs font-semibold flex items-center gap-2">
+                    <span>Contact Us</span>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 btn-arrow"></i>
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false"
+                class="lg:hidden p-2 rounded-xl border border-slate-200 bg-white text-slate-800">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 px-6 py-5 shadow-xl">
+            <div class="flex flex-col gap-4 text-sm font-semibold text-slate-700">
+                <a href="index.html" class="hover:text-[#1E45FB]">Home</a>
+                <a href="about.html" class="hover:text-[#1E45FB]">About Us</a>
+                <a href="solutions.html" class="hover:text-[#1E45FB]">Solutions &amp; Core Tech</a>
+                <a href="ecosystem.html" class="text-[#1E45FB]">Our Ecosystem</a>
+                <a href="events.html" class="hover:text-[#1E45FB]">Events &amp; News</a>
+                <a href="contact.html"
+                    class="mt-2 inline-flex justify-center items-center gap-2 px-5 py-3 rounded-full bg-[#1E45FB] text-white">
+                    Contact Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-32 sm:pt-36">
+
+        <!-- ================= PAGE HERO ================= -->
+        <section class="max-w-7xl mx-auto px-5 sm:px-8 pb-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+                <div class="lg:col-span-8" data-reveal="left">
+                    <span class="tut-badge mb-5">3 Specialized Units</span>
+                    <h1
+                        class="font-display font-bold text-5xl sm:text-6xl lg:text-7xl leading-[0.98] tracking-tight text-[#0A0B0F]">
+                        The TUT
+                        <span class="block text-[#A3ACB9] mt-1">Ecosystem</span>
+                    </h1>
+                </div>
+                <div class="lg:col-span-4" data-reveal="right">
+                    <p class="text-sm sm:text-base text-slate-500 leading-relaxed">
+                        Switch between our three dedicated units below to see how TUT.Company delivers online learning,
+                        offline labs, and flagship IT events.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Interactive Pill Switcher -->
+            <div class="mt-10 inline-flex flex-wrap gap-2 p-2 rounded-3xl bg-white border border-slate-200 shadow-sm"
+                data-reveal>
+                <button data-tab="edu"
+                    class="eco-tab px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all bg-[#1E45FB] text-white shadow-md">
+                    <i data-lucide="laptop" class="w-4 h-4"></i> TUT.EDU
+                </button>
+                <button data-tab="academy"
+                    class="eco-tab px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all text-slate-600 hover:text-slate-900">
+                    <i data-lucide="building-2" class="w-4 h-4"></i> TUT.Academy
+                </button>
+                <button data-tab="entertainment"
+                    class="eco-tab px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all text-slate-600 hover:text-slate-900">
+                    <i data-lucide="trophy" class="w-4 h-4"></i> TUT.Entertainment
+                </button>
+            </div>
+        </section>
+
+        <!-- ================= DYNAMIC ECOSYSTEM STAGE ================= -->
+        <section class="max-w-7xl mx-auto px-5 sm:px-8 pb-20">
+            <div id="eco-stage"
+                class="bg-white rounded-[2.25rem] border border-slate-200/80 shadow-xl overflow-hidden transition-all duration-300">
+            </div>
+        </section>
+
+        <!-- ================= LEARNING & EVENT MATRIX (DARK BENTO) ================= -->
+        <section class="max-w-7xl mx-auto px-3 sm:px-8 pb-24">
+            <div class="bg-[#0A0B0F] text-white rounded-[2.25rem] px-6 sm:px-12 py-14 sm:py-16 shadow-2xl" data-reveal>
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+                    <div>
+                        <span class="tut-badge mb-4">Quick Comparison</span>
+                        <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight">Choose Your Entry Point
+                        </h2>
+                    </div>
+                    <a href="contact.html"
+                        class="text-xs font-bold uppercase tracking-wider text-[#CDF22B] hover:underline flex items-center gap-1.5">
+                        Need Corporate Partnership? <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse min-w-[640px]">
+                        <thead>
+                            <tr class="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
+                                <th class="py-4 pr-6">Business Unit</th>
+                                <th class="py-4 pr-6">Format</th>
+                                <th class="py-4 pr-6">Skill Level</th>
+                                <th class="py-4">Primary Focus</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/10 text-sm">
+                            <tr class="hover:bg-white/[0.03] transition-colors">
+                                <td class="py-5 pr-6 font-display font-bold text-white">TUT.EDU</td>
+                                <td class="py-5 pr-6"><span
+                                        class="px-3 py-1 rounded-full bg-[#1E45FB]/30 text-blue-300 text-xs font-semibold">100%
+                                        Online</span></td>
+                                <td class="py-5 pr-6 text-slate-300">Beginner to Professional</td>
+                                <td class="py-5 text-slate-400">Interactive courses, AI tutor, self-paced IT mastery
+                                    &amp; certificates.</td>
+                            </tr>
+                            <tr class="hover:bg-white/[0.03] transition-colors">
+                                <td class="py-5 pr-6 font-display font-bold text-white">TUT.Academy</td>
+                                <td class="py-5 pr-6"><span
+                                        class="px-3 py-1 rounded-full bg-[#CDF22B]/20 text-[#CDF22B] text-xs font-semibold">Offline
+                                        / On-Site</span></td>
+                                <td class="py-5 pr-6 text-slate-300">Beginner to Professional</td>
+                                <td class="py-5 text-slate-400">Intensive bootcamps, live mentorship, hardware IoT &amp;
+                                    robotics labs.</td>
+                            </tr>
+                            <tr class="hover:bg-white/[0.03] transition-colors">
+                                <td class="py-5 pr-6 font-display font-bold text-white">TUT.Entertainment</td>
+                                <td class="py-5 pr-6"><span
+                                        class="px-3 py-1 rounded-full bg-white/15 text-white text-xs font-semibold">Live
+                                        &amp; Hybrid Events</span></td>
+                                <td class="py-5 pr-6 text-slate-300">Open to Public &amp; Tech Pros</td>
+                                <td class="py-5 text-slate-400">Tech expos showcasing TUT.Company creations, hackathons
+                                    &amp; IT arenas.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="relative z-10 bg-white border-t border-slate-200/80 pt-16 pb-8 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-12">
+                <div class="lg:col-span-6">
+                    <h3 class="font-display font-bold text-2xl sm:text-3xl text-slate-900 leading-snug mb-6">
+                        Building Tomorrow's<br />Tech &amp; Talent Ecosystem
+                    </h3>
+                    <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs font-semibold text-slate-500">
+                        <a href="index.html" class="hover:text-slate-900">Home</a>
+                        <a href="about.html" class="hover:text-slate-900">About Us</a>
+                        <a href="solutions.html" class="hover:text-slate-900">Solutions</a>
+                        <a href="ecosystem.html" class="text-[#1E45FB]">Ecosystem</a>
+                        <a href="events.html" class="hover:text-slate-900">Events</a>
+                        <a href="contact.html" class="hover:text-slate-900">Contact</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-6 lg:flex lg:justify-end">
+                    <div class="w-full max-w-sm">
+                        <p class="font-display font-semibold text-sm text-slate-900 mb-3">Subscribe to our tech dispatch
+                        </p>
+                        <form class="newsletter-form flex items-center gap-2">
+                            <input type="email" required placeholder="Enter your email address"
+                                class="flex-1 bg-[#F4F6F9] border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 focus:outline-none focus:border-[#1E45FB]" />
+                            <button type="submit" aria-label="Subscribe"
+                                class="w-11 h-11 rounded-xl bg-[#1E45FB] text-white flex items-center justify-center hover:bg-[#1432C8] transition-colors shrink-0">
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-watermark font-display font-bold text-center py-4 tracking-tighter">[TUT.COMPANY]</div>
+            <div
+                class="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+                <div class="flex items-center gap-4 text-slate-500">
+                    <a href="#" class="hover:text-[#1E45FB]"><i data-lucide="github" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-[#1E45FB]"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-[#1E45FB]"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-[#1E45FB]"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+                </div>
+                <p>&copy; 2026 TUT.Company. All rights reserved.</p>
+                <div class="flex items-center gap-5">
+                    <a href="ecosystem.html#edu" class="hover:text-slate-900">TUT.EDU</a>
+                    <a href="ecosystem.html#academy" class="hover:text-slate-900">TUT.Academy</a>
+                    <a href="ecosystem.html#entertainment" class="hover:text-slate-900">TUT.Entertainment</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const stage = document.getElementById("eco-stage");
+            const tabs = document.querySelectorAll(".eco-tab");
+
+            const EXTRA_DETAILS = {
+                edu: {
+                    accent: "bg-[#1E45FB] text-white",
+                    ctaLabel: "Enroll in Online Tracks",
+                    ctaHref: "contact.html",
+                    programs: [
+                        { title: "Foundations of Web & Code", level: "Beginner", desc: "HTML, CSS, JavaScript, Git, and modern full-stack fundamentals." },
+                        { title: "Applied AI & Prompt Engineering", level: "Intermediate", desc: "Build practical LLM workflows, APIs, and intelligent web tools." },
+                        { title: "Enterprise Cloud & Architecture", level: "Professional", desc: "Scalable system design, performance tuning, and production ops." }
+                    ]
+                },
+                academy: {
+                    accent: "bg-[#CDF22B] text-[#0A0B0F]",
+                    ctaLabel: "Book a Campus Visit",
+                    ctaHref: "contact.html",
+                    programs: [
+                        { title: "12-Week Full-Stack Bootcamp", level: "Beginner to Pro", desc: "Daily on-site coding sprints mentored directly by TUT.Company engineers." },
+                        { title: "IoT & Robotics Hardware Lab", level: "Hands-On", desc: "Solder, wire, and program autonomous ESP32 & ROS2 prototypes in person." },
+                        { title: "Corporate IT Upskilling", level: "Enterprise", desc: "Tailored offline workshops designed for engineering teams and universities." }
+                    ]
+                },
+                entertainment: {
+                    accent: "bg-[#0A0B0F] text-[#CDF22B]",
+                    ctaLabel: "Explore Upcoming Events",
+                    ctaHref: "events.html",
+                    programs: [
+                        { title: "TUT Tech Expo", level: "Annual Flagship", desc: "Live exhibition unveiling the newest AI, Web, and Robotics products from TUT.Company." },
+                        { title: "National Code & AI Hackathon", level: "Competition", desc: "48-hour collaborative build marathon open to students and senior developers." },
+                        { title: "Autonomous Robotics Arena", level: "Live Showcase", desc: "Spectator-friendly hardware tournaments testing speed, sensors, and precision." }
+                    ]
+                }
+            };
+
+            function activateTab(id) {
+                const unit = TUT_DATA.ecosystem.find(u => u.id === id) || TUT_DATA.ecosystem[0];
+                const extra = EXTRA_DETAILS[unit.id];
+
+                // Update button active styling
+                tabs.forEach(btn => {
+                    const isActive = btn.dataset.tab === unit.id;
+                    btn.className = isActive
+                        ? "eco-tab px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all bg-[#1E45FB] text-white shadow-md"
+                        : "eco-tab px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all text-slate-600 hover:text-slate-900 hover:bg-slate-100";
+                });
+
+                stage.style.opacity = "0";
+                stage.style.transform = "translateY(12px)";
+
+                setTimeout(() => {
+                    stage.innerHTML = `
+            <div class="grid grid-cols-1 lg:grid-cols-12">
+              <div class="lg:col-span-5 relative min-h-[300px] lg:min-h-[480px] bg-slate-900">
+                <img src="${unit.image}" alt="${unit.name}" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <span class="absolute top-6 left-6 px-3.5 py-1.5 rounded-full text-xs font-bold ${extra.accent}">${unit.badge}</span>
+                <div class="absolute bottom-6 left-6 right-6 glass-pill rounded-2xl p-4 flex items-center justify-between">
+                  <div>
+                    <p class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Audience</p>
+                    <p class="font-display font-bold text-sm text-slate-900">${unit.audience}</p>
+                  </div>
+                  <span class="px-3 py-1 rounded-full bg-[#0A0B0F] text-[#CDF22B] text-xs font-bold">${unit.stats}</span>
+                </div>
+              </div>
+
+              <div class="lg:col-span-7 p-7 sm:p-10 lg:p-12 flex flex-col justify-between">
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-widest text-[#1E45FB] mb-2">${unit.role}</p>
+                  <h2 class="font-display font-bold text-3xl sm:text-4xl text-slate-900 mb-3">${unit.name}</h2>
+                  <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-8">${unit.summary}</p>
+
+                  <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Featured Tracks &amp; Programs</p>
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                    ${extra.programs.map(p => `
+                      <div class="p-4 rounded-2xl bg-[#F7F8FA] border border-slate-200/70 hover:border-[#1E45FB]/40 transition-colors">
+                        <span class="inline-block text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-white text-[#1E45FB] border border-slate-200 mb-2">${p.level}</span>
+                        <h3 class="font-display font-bold text-sm text-slate-900 mb-1.5">${p.title}</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">${p.desc}</p>
+                      </div>
+                    `).join("")}
+                  </div>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-slate-100">
+                  <div class="flex flex-wrap gap-3">
+                    ${unit.highlights.map(h => `<span class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700"><i data-lucide="check-circle-2" class="w-4 h-4 text-[#1E45FB]"></i>${h}</span>`).join("")}
+                  </div>
+                  <a href="${extra.ctaHref}" class="btn-pill inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#1E45FB] text-white text-xs font-semibold">
+                    <span>${extra.ctaLabel}</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 btn-arrow"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          `;
+                    stage.style.opacity = "1";
+                    stage.style.transform = "translateY(0)";
+                    if (window.lucide) lucide.createIcons();
+                }, 180);
+            }
+
+            tabs.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const id = btn.dataset.tab;
+                    history.replaceState(null, "", `#${id}`);
+                    activateTab(id);
+                });
+            });
+
+            // Support deep-link hashes (#edu, #academy, #entertainment)
+            const initialHash = window.location.hash.replace("#", "");
+            activateTab(["edu", "academy", "entertainment"].includes(initialHash) ? initialHash : "edu");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,245 @@
+/* =========================================
+   TUT.COMPANY — Modern Tech Clean Stylesheet
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+    --tut-blue: #1E45FB;
+    --tut-blue-dark: #1432C8;
+    --tut-lime: #CDF22B;
+    --tut-dark: #0A0B0F;
+    --tut-surface: #F7F8FA;
+    --tut-muted: #A3ACB9;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--tut-surface);
+    color: #0F172A;
+}
+
+.font-display {
+    font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--tut-blue);
+}
+
+/* Top Scroll Progress Indicator */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--tut-blue), var(--tut-lime));
+    z-index: 9999;
+    transition: width 0.1s ease-out;
+}
+
+/* Subtle Architectural Vertical Dashed Grid */
+.tech-grid-bg {
+    position: relative;
+}
+
+.tech-grid-lines {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.tech-grid-lines span {
+    border-right: 1px dashed rgba(15, 23, 42, 0.06);
+}
+
+.tech-grid-lines span:first-child {
+    border-left: 1px dashed rgba(15, 23, 42, 0.06);
+}
+
+/* Tilted Signature Badge */
+.tut-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background-color: var(--tut-lime);
+    color: var(--tut-dark);
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    padding: 0.28rem 0.75rem;
+    border-radius: 999px;
+    transform: rotate(-6deg);
+    box-shadow: 0 8px 20px -6px rgba(205, 242, 43, 0.75);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+
+.tut-badge:hover {
+    transform: rotate(0deg) scale(1.06);
+    box-shadow: 0 12px 24px -6px rgba(205, 242, 43, 0.9);
+}
+
+/* Pill CTA Button Animation */
+.btn-pill {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -10px rgba(30, 69, 251, 0.55);
+}
+
+.btn-pill .btn-arrow {
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-pill:hover .btn-arrow {
+    transform: translateX(3px);
+}
+
+/* Scroll Reveal Animations */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+[data-reveal="left"] {
+    transform: translateX(-36px);
+}
+
+[data-reveal="right"] {
+    transform: translateX(36px);
+}
+
+[data-reveal="scale"] {
+    transform: scale(0.94);
+}
+
+[data-reveal].revealed {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+/* Gentle Floating Animation for CTA Cards */
+@keyframes floatSlow {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes floatSlowReverse {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+.animate-float-slow {
+    animation: floatSlow 5.5s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+    animation: floatSlowReverse 6.5s ease-in-out infinite;
+}
+
+/* Hero Slide Smooth Fade */
+.hero-slide-img {
+    transition: opacity 0.6s ease, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-slide-entering {
+    opacity: 0;
+    transform: scale(1.04);
+}
+
+/* Card Image Zoom */
+.card-zoom img {
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-zoom:hover img {
+    transform: scale(1.06);
+}
+
+/* Glass Surface */
+.glass-pill {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Navbar Scrolled State */
+.navbar-scrolled {
+    background: rgba(255, 255, 255, 0.86);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 8px 30px -12px rgba(15, 23, 42, 0.08);
+    border-color: rgba(15, 23, 42, 0.06);
+}
+
+/* Giant Watermark Text */
+.footer-watermark {
+    font-size: clamp(2.8rem, 11vw, 9.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    user-select: none;
+    color: rgba(15, 23, 42, 0.055);
+}
+
+/* Modal Backdrop Transition */
+.modal-overlay {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.28s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-box {
+    transform: translateY(18px) scale(0.97);
+    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.active .modal-box {
+    transform: translateY(0) scale(1);
+}

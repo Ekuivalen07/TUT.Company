@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us — TUT.Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { tutBlue: '#1E45FB', tutLime: '#CDF22B', tutDark: '#0A0B0F', tutMuted: '#A3ACB9' }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .faq-item.open .faq-content {
+            opacity: 1;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+            background-color: #1E45FB;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F7F8FA] text-slate-900 antialiased selection:bg-[#CDF22B] selection:text-[#0A0B0F] overflow-x-hidden">
+
+    <div id="scroll-progress"></div>
+    <div class="tech-grid-lines hidden md:grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+    <header id="main-navbar" class="fixed top-0 inset-x-0 z-40 transition-all duration-300 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2.5 group">
+                <div
+                    class="w-9 h-9 rounded-xl bg-[#0A0B0F] flex items-center justify-center shadow-sm group-hover:bg-[#1E45FB] transition-colors">
+                    <span
+                        class="w-3.5 h-3.5 rounded-sm bg-[#CDF22B] rotate-45 block transition-transform duration-300 group-hover:rotate-90"></span>
+                </div>
+                <span class="font-display font-bold text-lg tracking-tight text-slate-900">TUT<span
+                        class="text-[#1E45FB]">.Company</span></span>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-500">
+                <a href="index.html" class="hover:text-slate-900 transition-colors">Home</a>
+                <a href="about.html" class="hover:text-slate-900 transition-colors">About Us</a>
+                <a href="solutions.html" class="hover:text-slate-900 transition-colors">Solutions</a>
+                <a href="ecosystem.html" class="hover:text-slate-900 transition-colors">Ecosystem</a>
+                <a href="events.html" class="hover:text-slate-900 transition-colors">Events</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="ecosystem.html#edu"
+                    class="px-4 py-2 rounded-full border border-slate-300 text-xs font-semibold text-slate-800 hover:border-slate-900 transition-colors">TUT.EDU</a>
+                <a href="contact.html"
+                    class="btn-pill px-5 py-2.5 rounded-full bg-[#0A0B0F] text-[#CDF22B] text-xs font-semibold flex items-center gap-2">
+                    <span>Contact Us</span>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 btn-arrow"></i>
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false"
+                class="lg:hidden p-2 rounded-xl border border-slate-200 bg-white text-slate-800">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 px-6 py-5 shadow-xl">
+            <div class="flex flex-col gap-4 text-sm font-semibold text-slate-700">
+                <a href="index.html" class="hover:text-[#1E45FB]">Home</a>
+                <a href="about.html" class="hover:text-[#1E45FB]">About Us</a>
+                <a href="solutions.html" class="hover:text-[#1E45FB]">Solutions &amp; Core Tech</a>
+                <a href="ecosystem.html" class="hover:text-[#1E45FB]">Our Ecosystem</a>
+                <a href="events.html" class="hover:text-[#1E45FB]">Events &amp; News</a>
+                <a href="contact.html"
+                    class="mt-2 inline-flex justify-center items-center gap-2 px-5 py-3 rounded-full bg-[#0A0B0F] text-[#CDF22B]">
+                    Contact Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-32 sm:pt-36">
+
+        <!-- ================= PAGE HERO ================= -->
+        <section class="max-w-7xl mx-auto px-5 sm:px-8 pb-14">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+                <div class="lg:col-span-8" data-reveal="left">
+                    <span class="tut-badge mb-5">Get In Touch</span>
+                    <h1
+                        class="font-display font-bold text-5xl sm:text-6xl lg:text-7xl leading-[0.98] tracking-tight text-[#0A0B0F]">
+                        Let's Build
+                        <span class="block text-[#A3ACB9] mt-1">Together</span>
+                    </h1>
+                </div>
+                <div class="lg:col-span-4" data-reveal="right">
+                    <p class="text-sm sm:text-base text-slate-500 leading-relaxed">
+                        Whether you're commissioning a custom AI/IoT build, enrolling in TUT.EDU or TUT.Academy, or
+                        partnering on a TUT.Entertainment event—our team responds within 24 hours.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT SPLIT GRID ================= -->
+        <section class="max-w-7xl mx-auto px-5 sm:px-8 pb-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+                <!-- Left Column: Unit Channels & HQ Card -->
+                <div class="lg:col-span-5 space-y-5" data-reveal="left">
+                    <!-- Dark HQ Info Card -->
+                    <div class="bg-[#0A0B0F] text-white rounded-[2rem] p-7 sm:p-8 shadow-xl">
+                        <span
+                            class="inline-block px-3 py-1 rounded-full bg-[#CDF22B] text-[#0A0B0F] text-[11px] font-bold mb-5">Headquarters</span>
+                        <h2 class="font-display font-bold text-2xl mb-2">TUT.Company Tech Hub</h2>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                            Jl. Inovasi Teknologi No. 07, Sentul City,<br />
+                            Bogor, West Java 16810, Indonesia
+                        </p>
+                        <div class="space-y-3 text-xs sm:text-sm text-slate-300 pt-5 border-t border-white/10">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="mail" class="w-4 h-4 text-[#CDF22B]"></i>
+                                <span>hello@tut.company</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="phone" class="w-4 h-4 text-[#CDF22B]"></i>
+                                <span>+62 21 8090 2026</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="clock" class="w-4 h-4 text-[#CDF22B]"></i>
+                                <span>Mon – Fri, 09:00 – 18:00 WIB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Ecosystem Desks -->
+                    <div class="bg-white rounded-[1.75rem] p-6 border border-slate-200/80 shadow-sm space-y-4">
+                        <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Direct Ecosystem Desks</p>
+
+                        <div class="flex items-start gap-3.5 pb-3.5 border-b border-slate-100">
+                            <div
+                                class="w-9 h-9 rounded-xl bg-[#1E45FB]/10 text-[#1E45FB] flex items-center justify-center shrink-0">
+                                <i data-lucide="cpu" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm text-slate-900">TUT.Company B2B &amp; R&amp;D
+                                </h3>
+                                <p class="text-xs text-slate-500">AI, Software, App/Web &amp; IoT Robotics &bull; <span
+                                        class="text-[#1E45FB] font-medium">solutions@tut.company</span></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5 pb-3.5 border-b border-slate-100">
+                            <div
+                                class="w-9 h-9 rounded-xl bg-[#CDF22B]/40 text-[#0A0B0F] flex items-center justify-center shrink-0">
+                                <i data-lucide="laptop" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm text-slate-900">TUT.EDU &amp; TUT.Academy</h3>
+                                <p class="text-xs text-slate-500">Online Courses &amp; Offline Bootcamps &bull; <span
+                                        class="text-[#1E45FB] font-medium">admissions@tut.company</span></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div
+                                class="w-9 h-9 rounded-xl bg-slate-900 text-white flex items-center justify-center shrink-0">
+                                <i data-lucide="trophy" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm text-slate-900">TUT.Entertainment</h3>
+                                <p class="text-xs text-slate-500">Expos, Competitions &amp; Sponsorships &bull; <span
+                                        class="text-[#1E45FB] font-medium">events@tut.company</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Business Inquiry Form -->
+                <div class="lg:col-span-7 bg-white rounded-[2rem] p-7 sm:p-10 border border-slate-200/80 shadow-xl"
+                    data-reveal="right">
+                    <div class="mb-7">
+                        <h2 class="font-display font-bold text-2xl sm:text-3xl text-slate-900 mb-1.5">Send an Inquiry
+                        </h2>
+                        <p class="text-sm text-slate-500">Select the unit you want to reach and tell us about your
+                            goals.</p>
+                    </div>
+
+                    <form id="contact-form" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-2">Full Name *</label>
+                                <input type="text" required placeholder="Alex Morgan"
+                                    class="w-full bg-[#F7F8FA] border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-[#1E45FB] transition-colors" />
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-2">Work or Personal Email
+                                    *</label>
+                                <input type="email" required placeholder="alex@company.com"
+                                    class="w-full bg-[#F7F8FA] border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-[#1E45FB] transition-colors" />
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-2">Target Ecosystem Unit
+                                    *</label>
+                                <select required
+                                    class="w-full bg-[#F7F8FA] border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:bg-white focus:border-[#1E45FB] transition-colors">
+                                    <option value="company">TUT.Company (AI, Web/App, IoT Build)</option>
+                                    <option value="edu">TUT.EDU (Online IT Classes)</option>
+                                    <option value="academy">TUT.Academy (Offline Bootcamp &amp; Labs)</option>
+                                    <option value="entertainment">TUT.Entertainment (Events &amp; Expo)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-2">Organization / School
+                                    (Optional)</label>
+                                <input type="text" placeholder="Company or University name"
+                                    class="w-full bg-[#F7F8FA] border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-[#1E45FB] transition-colors" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-2">How can we help? *</label>
+                            <textarea rows="5" required
+                                placeholder="Tell us about your software/IoT project, learning track, or event collaboration..."
+                                class="w-full bg-[#F7F8FA] border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-[#1E45FB] transition-colors resize-none"></textarea>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+                            <p class="text-xs text-slate-400">Protected by TUT.Company privacy standards.</p>
+                            <button id="contact-submit-btn" type="submit"
+                                class="btn-pill inline-flex items-center justify-center gap-3 pl-6 pr-2.5 py-2.5 rounded-full bg-[#1E45FB] text-white text-sm font-semibold">
+                                <span>Send Message</span>
+                                <span
+                                    class="w-8 h-8 rounded-full bg-white text-[#1E45FB] flex items-center justify-center btn-arrow">
+                                    <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= INTERACTIVE FAQ ACCORDION ================= -->
+        <section class="max-w-4xl mx-auto px-5 sm:px-8 pb-24">
+            <div class="text-center mb-12" data-reveal>
+                <span class="tut-badge mb-4">FAQ</span>
+                <h2 class="font-display font-bold text-3xl sm:text-5xl tracking-tight text-[#0A0B0F]">
+                    Frequently Asked <span class="text-[#A3ACB9]">Questions</span>
+                </h2>
+            </div>
+
+            <div id="faq-list" class="space-y-3.5" data-reveal>
+                <!-- FAQ 1 -->
+                <div class="faq-item bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden">
+                    <button class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4">
+                        <span class="font-display font-bold text-base sm:text-lg text-slate-900">What is the difference
+                            between TUT.EDU and TUT.Academy?</span>
+                        <span
+                            class="faq-icon w-8 h-8 rounded-full bg-[#F4F6F9] text-slate-700 flex items-center justify-center shrink-0 transition-all duration-300">
+                            <i data-lucide="plus" class="w-4 h-4"></i>
+                        </span>
+                    </button>
+                    <div class="faq-content">
+                        <p class="px-6 pb-5 text-sm text-slate-600 leading-relaxed">
+                            <strong>TUT.EDU</strong> is our 100% online learning platform built for flexible, self-paced
+                            IT mastery with interactive coding sandboxes and AI assistance. <strong>TUT.Academy</strong>
+                            delivers offline, in-person intensive bootcamps and hands-on hardware laboratories for
+                            direct mentorship.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden">
+                    <button class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4">
+                        <span class="font-display font-bold text-base sm:text-lg text-slate-900">Are TUT classes
+                            suitable for complete beginners or experienced engineers?</span>
+                        <span
+                            class="faq-icon w-8 h-8 rounded-full bg-[#F4F6F9] text-slate-700 flex items-center justify-center shrink-0 transition-all duration-300">
+                            <i data-lucide="plus" class="w-4 h-4"></i>
+                        </span>
+                    </button>
+                    <div class="faq-content">
+                        <p class="px-6 pb-5 text-sm text-slate-600 leading-relaxed">
+                            Both online (TUT.EDU) and offline (TUT.Academy) tracks are structured from zero-experience
+                            beginner foundations all the way to professional specialization in AI, full-stack
+                            architecture, and embedded robotics.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden">
+                    <button class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4">
+                        <span class="font-display font-bold text-base sm:text-lg text-slate-900">Can businesses hire
+                            TUT.Company for custom AI, Web, or IoT development?</span>
+                        <span
+                            class="faq-icon w-8 h-8 rounded-full bg-[#F4F6F9] text-slate-700 flex items-center justify-center shrink-0 transition-all duration-300">
+                            <i data-lucide="plus" class="w-4 h-4"></i>
+                        </span>
+                    </button>
+                    <div class="faq-content">
+                        <p class="px-6 pb-5 text-sm text-slate-600 leading-relaxed">
+                            Yes. TUT.Company partners with startups, enterprises, and institutions to design, engineer,
+                            and deploy production AI systems, scalable web/mobile applications, and custom IoT robotics
+                            hardware.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden">
+                    <button class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4">
+                        <span class="font-display font-bold text-base sm:text-lg text-slate-900">How can we join or
+                            sponsor TUT.Entertainment expos and competitions?</span>
+                        <span
+                            class="faq-icon w-8 h-8 rounded-full bg-[#F4F6F9] text-slate-700 flex items-center justify-center shrink-0 transition-all duration-300">
+                            <i data-lucide="plus" class="w-4 h-4"></i>
+                        </span>
+                    </button>
+                    <div class="faq-content">
+                        <p class="px-6 pb-5 text-sm text-slate-600 leading-relaxed">
+                            Individual attendees and hackathon teams can register directly on our <a href="events.html"
+                                class="text-[#1E45FB] font-semibold underline">Events page</a>. For corporate
+                            sponsorships, university collaborations, or exhibition booths, select
+                            <em>TUT.Entertainment</em> in the inquiry form above.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="relative z-10 bg-white border-t border-slate-200/80 pt-16 pb-8 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-12">
+                <div class="lg:col-span-6">
+                    <h3 class="font-display font-bold text-2xl sm:text-3xl text-slate-900 leading-snug mb-6">
+                        Building Tomorrow's<br />Tech &amp; Talent Ecosystem
+                    </h3>
+                    <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs font-semibold text-slate-500">
+                        <a href="index.html" class="hover:text-slate-900">Home</a>
+                        <a href="about.html" class="hover:text-slate-900">About Us</a>
+                        <a href="solutions.html" class="hover:text-slate-900">Solutions</a>
+                        <a href="ecosystem.html" class="hover:text-slate-900">Ecosystem</a>
+                        <a href="events.html" class="hover:text-slate-900">Events</a>
+                        <a href="contact.html" class="text-[#1E45FB]">Contact</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-6 lg:flex lg:justify-end">
+                    <div class="w-full max-w-sm">
+                        <p class="font-display font-semibold text-sm text-slate-900 mb-3">Subscribe to our tech dispatch
+                        </p>
+                        <form class="newsletter-form flex items-center gap-2">
+                            <input type="email" required placeholder="Enter your email address"
+                                class="flex-1 bg-[#F4F6F9] border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 focus:outline-none focus:border-[#1E45FB]" />
+                            <button type="submit" aria-label="Subscribe"
+                                class="w-11 h-11 rounded-xl bg-[#1E45FB] text-white flex items-center justify-center hover:bg-[#1432C8] transition-colors shrink-0">
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-watermark font-display font-bold text-center py-4 tracking-tighter">[TUT.COMPANY]</div>
+            <div
+                class="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+                <div class="flex items-center gap-4 text-slate-500">
+                    <a href="#" class="hover:text-[#1E45FB]"><i data-lucide="github" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-[#1E45FB]"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-[#1E45FB]"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-[#1E45FB]"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+                </div>
+                <p>&copy; 2026 TUT.Company. All rights reserved.</p>
+                <div class="flex items-center gap-5">
+                    <a href="ecosystem.html#edu" class="hover:text-slate-900">TUT.EDU</a>
+                    <a href="ecosystem.html#academy" class="hover:text-slate-900">TUT.Academy</a>
+                    <a href="ecosystem.html#entertainment" class="hover:text-slate-900">TUT.Entertainment</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Contact Form Handling
+            const form = document.getElementById("contact-form");
+            const btn = document.getElementById("contact-submit-btn");
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                const originalText = btn.querySelector("span").textContent;
+                btn.disabled = true;
+                btn.querySelector("span").textContent = "Sending...";
+
+                setTimeout(() => {
+                    form.reset();
+                    btn.disabled = false;
+                    btn.querySelector("span").textContent = originalText;
+                    showToast("Message received! The TUT.Company team will reply within 24 hours.");
+                }, 700);
+            });
+
+            // 2. Smooth FAQ Accordion
+            const faqItems = document.querySelectorAll(".faq-item");
+            faqItems.forEach((item) => {
+                const trigger = item.querySelector(".faq-trigger");
+                const content = item.querySelector(".faq-content");
+
+                trigger.addEventListener("click", () => {
+                    const isOpen = item.classList.contains("open");
+
+                    // Close all others for clean reading
+                    faqItems.forEach((other) => {
+                        other.classList.remove("open");
+                        other.querySelector(".faq-content").style.maxHeight = null;
+                    });
+
+                    if (!isOpen) {
+                        item.classList.add("open");
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
